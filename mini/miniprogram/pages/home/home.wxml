@@ -1,2 +1,7 @@
-<!--miniprogram/pages/home/home.wxml-->
-<text>miniprogram/pages/home/home.wxml</text>
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{item.url}}">
+        <swiper-item>
+            <image class="swiper-image" src="{{item.url}}" mode="widthFit"/>
+        </swiper-item>
+    </block>
+</swiper>
