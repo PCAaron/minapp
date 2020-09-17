@@ -1,6 +1,6 @@
 <!--components/playlist/playlist.wxml-->
 <view class="playlist-container">
     <image class="playlist-img" src="{{cover.picUrl}}" />
-    <text class="playlist-playcount">{{cover.playCount}}</text>
+    <text class="playlist-playcount">{{_count}}</text>
     <view class="playlist-name">{{cover.name}}</view>
 </view>
