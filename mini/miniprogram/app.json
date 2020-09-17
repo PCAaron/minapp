@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/find/find",
-    "pages/me/me"
+    "pages/me/me",
+    "components/playlist/playlist"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -17,19 +18,19 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text":"音乐",
+        "text": "音乐",
         "iconPath": "images/music.png",
         "selectedIconPath": "images/music-selected.png"
       },
       {
         "pagePath": "pages/find/find",
-        "text":"发现",
+        "text": "发现",
         "iconPath": "images/find.png",
         "selectedIconPath": "images/find-selected.png"
       },
       {
         "pagePath": "pages/me/me",
-        "text":"我的",
+        "text": "我的",
         "iconPath": "images/me.png",
         "selectedIconPath": "images/me-selected.png"
       }

@@ -5,7 +5,7 @@
 
 ## 小程序云开发模式
 
-![小程序云开发模式](https://wx1.sbimg.cn/2020/09/16/GpX0A.png)       
+![小程序云开发模式](./statics/images/cloud-develop.jpg)       
 
 ### 云开发优势      
 

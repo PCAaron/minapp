@@ -5,3 +5,8 @@
         </swiper-item>
     </block>
 </swiper>
+<view class="playlist-wrap">
+    <block wx:for="{{playList}}">
+        <m-playlist cover="{{item}}"></m-playlist>
+    </block>
+</view>
