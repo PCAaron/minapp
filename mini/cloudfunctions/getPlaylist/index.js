@@ -14,9 +14,31 @@ const db = cloud.database()
 
 const playlistCollection = db.collection('playlist')
 
+const MAX_LIMIT=10
+
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const list = await playlistCollection.get() // 获取数据库列表
+  // const list = await playlistCollection.get() // 获取数据库列表:云函数限制一次只能获取100条
+
+  const countRes = await playlistCollection.count()
+  const total = countRes.total
+  const batchTimes = Math.ceil(total / MAX_LIMIT)
+  const tasks = []
+
+  for (let i = 0;i<batchTimes.length;i++) {
+    let promise = playlistCollection.skip(i*MAX_LIMIT).limit(MAX_LIMIT).get()
+    tasks.push(promise)
+  }
+  let list = {
+    data: []
+  }
+  if(tasks.length > 0){
+    list = (await Promise.all(tasks)).reduce((acc, cur) => {
+      return {
+        data: acc.data.concat(cur.data)
+      }
+    })
+  }
 
   const playlist = await rp(URL).then(res => {
     console.log('res', res)
