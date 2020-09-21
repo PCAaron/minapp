@@ -9,10 +9,15 @@ Component({
 
   // 监听器
   observers: {
-    ['cover.playCount'](count) {
+    ['cover.issue'](count) {
       console.log(count)
       this.setData({
         _count: this._formatNumber(count, 2)
+      })
+    },
+    ['cover.bannerurl'](url) {
+      this.setData({
+        _url: url.replace('{size}', '400')
       })
     }
   },
