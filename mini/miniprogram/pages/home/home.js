@@ -37,7 +37,8 @@ Page({
       name: 'music',
       data: {
         start: this.data.playList.length,
-        count: MAX_LIMIT
+        count: MAX_LIMIT,
+        $url: 'playlist'
       }
     }).then(res => {
       console.log(res)

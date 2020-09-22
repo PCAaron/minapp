@@ -41,7 +41,9 @@ exports.main = async (event, context) => {
   }
 
   const playlist = await rp(URL).then(res => {
-    console.log('res', res)
+    console.log('total', total)
+    console.log('batchTimes', batchTimes)
+    console.log('tasks', tasks)
     return JSON.parse(res).rank.list
   })
 
@@ -50,7 +52,7 @@ exports.main = async (event, context) => {
   for(let i=0,len1 = playlist.length; i<len1;i++) {
     let flag = true
     for(let j= 0,len2 = list.data.length;j<len2;j++) {
-      if(playlist[i].rankid === list.data[j].rankid){
+      if(playlist[i].id == list.data[j].id){
         flag = false
         break
       }
