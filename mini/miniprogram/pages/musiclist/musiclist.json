@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "m-music": "/components/musicitem/musicitem"
+  }
+}

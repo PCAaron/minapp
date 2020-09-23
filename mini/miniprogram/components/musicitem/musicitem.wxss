@@ -1,0 +1,21 @@
+/* components/musicitem/musicitem.wxss */
+.music-container{
+    display: flex;
+    padding: 14rpx 20rpx;
+    align-items: center;
+}
+.music-index{
+    color:#888;
+    font-size: 34rpx;
+    width: 80rpx;
+}
+.music-info{
+    flex-grow: 1;
+    width: 0;
+}
+.music-name{
+    font-size: 34rpx;
+    color:#333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

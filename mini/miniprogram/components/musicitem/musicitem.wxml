@@ -1,0 +1,12 @@
+<!--components/musicitem/musicitem.wxml-->
+<block wx:for="{{musiclist}}" wx:key="hash">
+    <view class="music-container">
+        <view class="music-index">{{index+1}}</view>
+        <view class="music-info">
+            <view class="music-name">
+                {{item.filename}}
+            </view>
+            <view class="music-singer"></view>
+        </view>
+    </view>
+</block>

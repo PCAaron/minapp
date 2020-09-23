@@ -33,6 +33,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    musicList() {
+      wx.navigateTo({
+        url: `../../pages/musiclist/musiclist?rankid=${this.properties.cover.rankid}`
+      })
+    },
     _formatNumber(num, point){
       let numStr = num.toString().split('.')[0]
       if (numStr.length < 6) {

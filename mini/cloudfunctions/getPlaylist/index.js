@@ -25,7 +25,7 @@ exports.main = async (event, context) => {
   const batchTimes = Math.ceil(total / MAX_LIMIT)
   const tasks = []
 
-  for (let i = 0;i<batchTimes.length;i++) {
+  for (let i = 0;i<batchTimes;i++) {
     let promise = playlistCollection.skip(i*MAX_LIMIT).limit(MAX_LIMIT).get()
     tasks.push(promise)
   }
