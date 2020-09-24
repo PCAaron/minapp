@@ -19,3 +19,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.playing view{
+    color: #FF59D3;
+}

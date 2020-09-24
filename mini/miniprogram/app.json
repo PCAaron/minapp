@@ -4,7 +4,8 @@
     "pages/find/find",
     "pages/me/me",
     "components/playlist/playlist",
-    "pages/musiclist/musiclist"
+    "pages/musiclist/musiclist",
+    "pages/player/player"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
