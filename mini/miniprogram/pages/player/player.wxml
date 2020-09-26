@@ -5,9 +5,12 @@
     <view class="player-disc {{isPlaying ? 'play' : ''}}">
         <image class="player-img rotation {{isPlaying? '' :'rotation-paused'}}" src="{{detail.img}}"/>
     </view>
-</view>
-<view class="control">
-    <text bind:tap="onPrev" class="iconfont icon-shangyishou"></text>
-    <text bind:tap="togglePlay" class="iconfont {{isPlaying ? 'icon-zanting' : 'icon-bofang_huaban'}}"></text>
-    <text bind:tap="onNext" class="iconfont icon-xiayishou"></text>
+    <view class="progress-bar">
+        <m-progress></m-progress>
+    </view>
+    <view class="control">
+        <text bind:tap="onPrev" class="iconfont icon-shangyishou"></text>
+        <text bind:tap="togglePlay" class="iconfont {{isPlaying ? 'icon-zanting' : 'icon-bofang_huaban'}}"></text>
+        <text bind:tap="onNext" class="iconfont icon-xiayishou"></text>
+    </view>
 </view>

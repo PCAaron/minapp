@@ -3,7 +3,6 @@
     "pages/home/home",
     "pages/find/find",
     "pages/me/me",
-    "components/playlist/playlist",
     "pages/musiclist/musiclist",
     "pages/player/player"
   ],
