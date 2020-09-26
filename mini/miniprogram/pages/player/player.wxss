@@ -55,3 +55,21 @@
     margin-top: -184rpx;
     margin-left: -184rpx;
 }
+.control{
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+.control .iconfont{
+    color: #FF59D3
+}
+.icon-shangyishou, .icon-xiayishou{
+    font-size: 80rpx;
+}
+.icon-bofang_huaban{
+    font-size: 120rpx;
+    margin: 0 50rpx;
+}

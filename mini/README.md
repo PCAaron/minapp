@@ -11,12 +11,20 @@
 - 一个用户在一个云环境中只能创建50个云函数      
 - 相识的请求归类到同一个云函数处理      
 - tcb-router是一个koa风格的云函数路由库     
+  用法详见：cloudfunctions/music/index.js       
 
 ## 酷狗音乐接口
 
 - 音乐详情：https://www.kugou.com/yy/index.php?r=play/getdata&hash=xxx      
   浏览器访问接口能正常获取，但是通过http请求则返回{“status”:0,“err_code”:20010,“data”:[]}       
-  需要在请求头中携带cookie值kg_mid，kg_mid可为任何值        
+  需要在请求头中携带cookie值kg_mid，kg_mid可为任何值      
+  用法详见：cloudfunctions/music/index.js   
+
+## 小程序中引入字体图标
+
+- iconfont:https://www.iconfont.cn/     
+  选中图标->加入项目->Font class：生成代码->在浏览器中打开代码目录并下载至小程序目录内
+  -> 全局引入：app.wxss中引入文件 -> text标签中使用     
 
 ## 参考文档
 

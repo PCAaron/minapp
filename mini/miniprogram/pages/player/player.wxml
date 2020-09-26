@@ -6,4 +6,8 @@
         <image class="player-img" src="{{detail.img}}"/>
     </view>
 </view>
-
+<view class="control">
+    <text class="iconfont icon-shangyishou"></text>
+    <text class="iconfont icon-bofang_huaban"></text>
+    <text class="iconfont icon-xiayishou"></text>
+</view>
