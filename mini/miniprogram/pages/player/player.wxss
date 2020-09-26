@@ -44,6 +44,10 @@
     background: url('https://s3.music.126.net/m/s/img/needle.png?702cf6d95f29e2e594f53a3caab50e12') no-repeat center/contain;
     transform: rotate(-15deg);
     transform-origin: 24rpx 10rpx;
+    transition: transform .5s ease;
+}
+.play.player-disc::after{
+    transform: rotate(0deg);
 }
 .player-img{
     width: 368rpx;
@@ -69,7 +73,21 @@
 .icon-shangyishou, .icon-xiayishou{
     font-size: 80rpx;
 }
-.icon-bofang_huaban{
+.icon-bofang_huaban,.icon-zanting{
     font-size: 120rpx;
     margin: 0 50rpx;
+}
+.rotation{
+    animation: rotation 12s linear infinite;
+}
+.rotation-paused{
+    animation-play-state: paused;
+}
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
