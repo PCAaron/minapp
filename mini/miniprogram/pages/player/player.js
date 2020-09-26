@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    detail: null
   },
 
   /**
@@ -32,7 +32,9 @@ Page({
         musicid: music.hash
       }
     }).then(res => {
-      console.log(res)
+      this.setData({
+        detail: res.result.data
+      })
     })
   },
 

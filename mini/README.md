@@ -12,6 +12,12 @@
 - 相识的请求归类到同一个云函数处理      
 - tcb-router是一个koa风格的云函数路由库     
 
+## 酷狗音乐接口
+
+- 音乐详情：https://www.kugou.com/yy/index.php?r=play/getdata&hash=xxx      
+  浏览器访问接口能正常获取，但是通过http请求则返回{“status”:0,“err_code”:20010,“data”:[]}       
+  需要在请求头中携带cookie值kg_mid，kg_mid可为任何值        
+
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)

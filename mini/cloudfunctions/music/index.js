@@ -14,7 +14,7 @@ const PLAY_URL = 'https://www.kugou.com'
 // });
 
 // let cookiejar = rp.jar();
-// cookiejar.setCookie(cookie, 'https://www.kugou.com');
+// cookiejar.setCookie(cookie.toString(), 'https://www.kugou.com');
 
 cloud.init({
   env: 'test-music-ruu6d'
