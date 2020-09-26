@@ -2,6 +2,7 @@
 let movableAreaWidth = 0
 let movableViewWidth = 0
 const backgroundAudioManager = wx.getBackgroundAudioManager()
+let currentSec = -1 //当前秒数
 Component({
   /**
    * 组件的属性列表
@@ -21,6 +22,7 @@ Component({
     movableDis: 0,
     progress: 0
   },
+  // 定义组件生命周期
   lifetimes:{
     ready(){
       this.getMovableDis()
@@ -41,7 +43,7 @@ Component({
         movableViewWidth = rect[0].width
       })
     },
-    // 绑定唯一播放器事件
+    // 绑定唯一播放器事件:播放生命周期
     bindBGMEvent() {
       backgroundAudioManager.onPlay(()=>{
 
@@ -65,7 +67,19 @@ Component({
         }
       })
       backgroundAudioManager.onTimeUpdate(()=>{
-        
+        const currentTime = backgroundAudioManager.currentTime
+        const duration = backgroundAudioManager.duration
+        const currentTimeFmt = this.formatTime(currentTime)
+        const sec = currentSec.toString().split('.')[0]
+        // 优化，1s设置一次setData
+        if(sec != currentSec){
+          this.setData({
+            movableDis: (movableAreaWidth - movableViewWidth) * currentTime / duration, //播放长度
+            progress: currentTime / duration * 100,
+            ['showTime.currentTime']: `${currentTimeFmt.min}:${currentTimeFmt.sec}`
+          })
+          currentSec = sec
+        }
       })
       backgroundAudioManager.onEnded(()=>{
         
