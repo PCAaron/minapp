@@ -41,7 +41,12 @@ Page({
         musiclist: res.result.songs.list,
         total: res.result.songs.total
       })
+      this.setMusiclist()
     })
+  },
+
+  setMusiclist() {
+    wx.setStorageSync('musiclist', this.data.musiclist)
   },
 
   /**

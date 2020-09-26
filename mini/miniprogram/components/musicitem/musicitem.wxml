@@ -1,6 +1,6 @@
 <!--components/musicitem/musicitem.wxml-->
 <block wx:for="{{musiclist}}" wx:key="hash">
-    <view class="music-container {{item.hash === playingid ? 'playing' : ''}}" bind:tap="onSelect" data-musicid="{{item.hash}}">
+    <view class="music-container {{item.hash === playingid ? 'playing' : ''}}" bind:tap="onSelect" data-musicid="{{item.hash}}" data-index="{{index}}">
         <view class="music-index">{{index+1}}</view>
         <view class="music-info">
             <view class="music-name">
