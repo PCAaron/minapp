@@ -3,6 +3,7 @@ let movableAreaWidth = 0
 let movableViewWidth = 0
 const backgroundAudioManager = wx.getBackgroundAudioManager()
 let currentSec = -1 //当前秒数
+let duration = 0 // 当前歌曲总时长
 Component({
   /**
    * 组件的属性列表
@@ -33,6 +34,23 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 绑定进度条事件
+    onChange(e){
+      console.log(e)
+      if(e.detail.source == 'touch'){
+        this.data.progress = e.detail.x / (movableAreaWidth - movableViewWidth) * 100
+        this.data.movableDis = e.detail.x
+      }
+    },
+    onTouchEnd(){
+      const currentTimeFmt = this.formatTime(Math.floor(backgroundAudioManager.currentTime))
+      this.setData({
+        progress: this.data.progress,
+        movableDis: this.data.movableDis,
+        ['showTime.currentTime']:`${currentTimeFmt.min}:${currentTimeFmt.sec}`
+      })
+      backgroundAudioManager.seek(duration*this.data.progress/100)
+    },
     // 获取movable宽度
     getMovableDis() {
       const query = this.createSelectorQuery()
@@ -40,7 +58,9 @@ Component({
       query.select('.movable-view').boundingClientRect()
       query.exec((rect)=>{
         movableAreaWidth = rect[0].width
-        movableViewWidth = rect[0].width
+        movableViewWidth = rect[1].width
+        console.log('movableAreaWidth', movableAreaWidth)
+        console.log('movableViewWidth', movableViewWidth)
       })
     },
     // 绑定唯一播放器事件:播放生命周期
@@ -70,7 +90,7 @@ Component({
         const currentTime = backgroundAudioManager.currentTime
         const duration = backgroundAudioManager.duration
         const currentTimeFmt = this.formatTime(currentTime)
-        const sec = currentSec.toString().split('.')[0]
+        const sec = currentTime.toString().split('.')[0]
         // 优化，1s设置一次setData
         if(sec != currentSec){
           this.setData({
@@ -91,7 +111,7 @@ Component({
       })
     },
     setTime(){
-      const duration = backgroundAudioManager.duration
+      duration = backgroundAudioManager.duration
       const durationFmt = this.formatTime(duration)
       this.setData({
         ['showTime.totalTime']: `${durationFmt.min}:${durationFmt.sec}`
