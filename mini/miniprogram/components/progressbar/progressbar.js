@@ -10,7 +10,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    
+    isSame: Boolean
   },
 
   /**
@@ -27,6 +27,9 @@ Component({
   // 定义组件生命周期
   lifetimes:{
     ready(){
+      if(this.properties.isSame && this.data.showTime.totalTime == '00:00'){
+        this.setTime()
+      }
       this.getMovableDis()
       this.bindBGMEvent()
     }

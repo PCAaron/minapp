@@ -13,7 +13,8 @@ Page({
     detail: null,
     isPlaying: false, // 播放状态
     isLyricShow: false,
-    lyric: ''
+    lyric: '',
+    isSame: false // 表示当前是否同一首歌曲
   },
 
   /**
@@ -26,8 +27,19 @@ Page({
   },
 
   loadMuiscDetail() {
-    backgroundAudioManager.stop()
     let music = muisclist[nowPlayingIdx]
+    if(music.hash == app.getPlayMusicId()){
+      this.setData({
+        isSame: true
+      })
+    } else {
+      this.setData({
+        isSame: false
+      })
+    }
+    if(!this.data.isSame) {
+      backgroundAudioManager.stop()
+    }
     console.log(music.hash)
     this.formatTile(music.filename)
     app.setPlayMusicId(music.hash)
@@ -47,11 +59,19 @@ Page({
       wx.setNavigationBarTitle({
         title: this.data.detail.song_name
       })
-      backgroundAudioManager.src = this.data.detail.play_url
-      backgroundAudioManager.title = this.data.detail.song_name
-      backgroundAudioManager.singer = this.data.detail.author_name
-      backgroundAudioManager.coverImgUrl = this.data.detail.img
-      backgroundAudioManager.play()
+      if(!this.data.detail.play_url){
+        wx.showToast({
+          title:'无法播放'
+        })
+        return
+      }
+      if(!this.data.isSame){
+        backgroundAudioManager.src = this.data.detail.play_url
+        backgroundAudioManager.title = this.data.detail.song_name
+        backgroundAudioManager.singer = this.data.detail.author_name
+        backgroundAudioManager.coverImgUrl = this.data.detail.img
+        backgroundAudioManager.play()
+      }
       this.setData({
         isPlaying: true
       })
