@@ -93,6 +93,10 @@ Page({
       isLyricShow: !this.data.isLyricShow
     })
   },
+
+  timeUpdate(event) {
+    this.selectComponent('.lyric').update(event.detail.currentTime) // 选中组件并调用方法
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
