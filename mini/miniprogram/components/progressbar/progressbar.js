@@ -37,7 +37,7 @@ Component({
   methods: {
     // 绑定进度条事件
     onChange(e){
-      console.log(e)
+      // console.log(e)
       if(e.detail.source == 'touch'){
         this.data.progress = e.detail.x / (movableAreaWidth - movableViewWidth) * 100
         this.data.movableDis = e.detail.x

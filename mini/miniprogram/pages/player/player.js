@@ -10,7 +10,9 @@ Page({
    */
   data: {
     detail: null,
-    isPlaying: false // 播放状态
+    isPlaying: false, // 播放状态
+    isLyricShow: false,
+    lyric: ''
   },
 
   /**
@@ -37,7 +39,8 @@ Page({
     }).then(res => {
       this.setData({
         detail: res.result.data,
-        isPlaying: false
+        isPlaying: false,
+        lyric: res.result.data.lyrics
       })
       wx.setNavigationBarTitle({
         title: this.data.detail.song_name
@@ -85,6 +88,11 @@ Page({
     this.loadMuiscDetail()
   },
 
+  showLyric() {
+    this.setData({
+      isLyricShow: !this.data.isLyricShow
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

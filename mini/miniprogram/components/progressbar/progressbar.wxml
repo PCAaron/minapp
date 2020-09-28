@@ -9,4 +9,4 @@
         <progress stroke-width="4" background-color="#969696" active-color="#fff" percent="{{progress}}"/>
     </view>
     <text class="time">{{showTime.totalTime}}</text>
-</view>>
+</view>

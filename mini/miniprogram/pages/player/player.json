@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "m-progress": "/components/progressbar/progressbar"
+    "m-progress": "/components/progressbar/progressbar",
+    "m-lyric": "/components/lyric/lyric"
   }
 }
