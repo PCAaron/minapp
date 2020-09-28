@@ -3,6 +3,7 @@ let muisclist = []
 let nowPlayingIdx = 0
 // 获取全局唯一的背景音频管理器
 const backgroundAudioManager = wx.getBackgroundAudioManager()
+const app = getApp()
 Page({
 
   /**
@@ -29,6 +30,7 @@ Page({
     let music = muisclist[nowPlayingIdx]
     console.log(music.hash)
     this.formatTile(music.filename)
+    app.setPlayMusicId(music.hash)
     wx.showLoading()
     wx.cloud.callFunction({
       name: 'music',

@@ -1,4 +1,5 @@
 // components/musicitem/musicitem.js
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -14,6 +15,13 @@ Component({
     playingid: -1
   },
 
+  pageLifetimes: {
+    show() {
+      this.setData({
+        playingid: app.getPlayMusicId()
+      })
+    }
+  },
   /**
    * 组件的方法列表
    */
