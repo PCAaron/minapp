@@ -68,12 +68,13 @@ Component({
     bindBGMEvent() {
       backgroundAudioManager.onPlay(()=>{
         isMoving = false // 解决touchEnd事件时再次触发onChange
+        this.triggerEvent('musicPlay')
       })
       backgroundAudioManager.onStop(()=>{
         
       })
       backgroundAudioManager.onPause(()=>{
-        
+        this.triggerEvent('musicPause')
       })
       backgroundAudioManager.onWaiting(()=>{
         

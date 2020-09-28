@@ -7,7 +7,7 @@
     </view>
     <m-lyric class="lyric" isLyricShow="{{!isLyricShow}}" bind:tap="showLyric" lyric="{{lyric}}"></m-lyric>
     <view class="progress-bar">
-        <m-progress bind:musicEnd="onNext" bind:timeUpdate="timeUpdate"></m-progress>
+        <m-progress bind:musicPlay="onPlay" bind:musicPause="onPause" bind:musicEnd="onNext" bind:timeUpdate="timeUpdate"></m-progress>
     </view>
     <view class="control">
         <text bind:tap="onPrev" class="iconfont icon-shangyishou"></text>
