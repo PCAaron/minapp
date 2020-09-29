@@ -1,2 +1,16 @@
 <!--miniprogram/pages/blog/blog.wxml-->
-<text>miniprogram/pages/blog/blog.wxml</text>
+<view class="container">
+    <textarea class="content" placeholder="分享新鲜事..."
+        bindinput="onInput" maxlength="140" auto-focus="{{true}}"
+        bindfocus="onFocus" bindblur="onBlur"
+    ></textarea>
+    <view class="image-list">
+        <view class="image-wrap selectphoto">
+            <i class="iconfont icon-jiahao"></i>
+        </view>
+    </view>
+</view>
+<view class="footer" style="bottom:{{footerBottom}}px">
+    <text class="words-num">{{wordNum}}</text>
+    <button class="send-btn">发布</button>
+</view>
