@@ -3,5 +3,5 @@
     "m-search":"/components/search/search",
     "m-login": "/components/login/login"
   },
-  "navigationBarTitleText": "发现"
+  "navigationBarTitleText": "动态"
 }

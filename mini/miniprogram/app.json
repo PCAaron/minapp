@@ -29,7 +29,7 @@
       },
       {
         "pagePath": "pages/find/find",
-        "text": "发现",
+        "text": "动态",
         "iconPath": "images/find.png",
         "selectedIconPath": "images/find-selected.png"
       },

@@ -1,5 +1,6 @@
 // miniprogram/pages/blog/blog.js
 const MAX_WORD_NUM = 140 //文字最大长度
+const MAX_IMG_NUM = 9
 Page({
 
   /**
@@ -7,7 +8,9 @@ Page({
    */
   data: {
     wordNum: 0, //输入文字个数
-    footerBottom: 0
+    footerBottom: 0,
+    images: [],
+    selectPhoto: true
   },
 
   /**
@@ -35,6 +38,40 @@ Page({
   onBlur() {
     this.setData({
       footerBottom: 0
+    })
+  },
+  onChooseImg() {
+    let max = MAX_IMG_NUM - this.data.images.length
+    wx.chooseImage({
+      count: max,
+      sizeType: ['original','compressed'],
+      sourceType: ['album','camera'],
+      success: (res) => {
+        this.setData({
+          images: this.data.images.concat(res.tempFilePaths)
+        })
+        max = MAX_IMG_NUM - this.data.images.length
+        this.setData({
+          selectPhoto: max <=0 ? false : true
+        })
+      }
+    })
+  },
+  onDeleteImage(e) {
+    this.data.images.splice(e.target.dataset.index,1)
+    this.setData({
+      images: this.data.images
+    })
+    if(this.data.images.length == MAX_IMG_NUM -1){
+      this.setData({
+        selectPhoto: true
+      })
+    }
+  },
+  onPreviewImg(e){
+    wx.previewImage({
+      urls: this.data.images,
+      current: e.target.dataset.imagesrc
     })
   },
   /**

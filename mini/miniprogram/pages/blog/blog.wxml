@@ -5,7 +5,13 @@
         bindfocus="onFocus" bindblur="onBlur"
     ></textarea>
     <view class="image-list">
-        <view class="image-wrap selectphoto">
+        <block wx:for="{{images}}" wx:key="*this">
+            <view class="image-wrap">
+                <image class="image" src="{{item}}" mode="aspectFill" bind:tap="onPreviewImg" data-imagesrc="{{item}}"/>
+                <i class="iconfont icon-shanchu" bind:tap="onDeleteImage" data-index="{{index}}"></i>
+            </view>
+        </block>
+        <view hidden="{{!selectPhoto}}" class="image-wrap selectphoto" bind:tap="onChooseImg">
             <i class="iconfont icon-jiahao"></i>
         </view>
     </view>
