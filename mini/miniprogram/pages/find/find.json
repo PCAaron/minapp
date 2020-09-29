@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "m-search":"/components/search/search",
-    "m-bottom": "/components/bottommodal/bottommodal"
+    "m-login": "/components/login/login"
   },
   "navigationBarTitleText": "发现"
 }

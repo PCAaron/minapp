@@ -17,8 +17,42 @@ Page({
 
   // 发布功能
   onPublish() {
-    this.setData({
-      modalShow: true
+    // 判断用户是否授权
+    wx.getSetting({
+      success:(res) => {
+        // 授权列表
+        if(res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            success:(res) => {
+              var userInfo = res.userInfo
+              var nickName = userInfo.nickName
+              var avatarUrl = userInfo.avatarUrl
+              var gender = userInfo.gender	// 性别：0：未知、1：男、2：女
+              var province = userInfo.province
+              var city = userInfo.city
+              var country = userInfo.country
+              this.onloginSuccess({
+                detail: res.userInfo
+              })
+            }
+          })
+        } else {
+          this.setData({
+            modalShow: true
+          })
+        }
+      }
+    })
+  },
+  onloginSuccess(e) {
+    const detail = e.detail
+    wx.navigateTo({
+      url: `../blog/blog?nickName=${detail.nickName}&avatarUrl=${detail.avatarUrl}`
+    })
+  },
+  onloginFail() {
+    wx.showModal({
+      title: '授权用户才能发布动态'
     })
   },
 
