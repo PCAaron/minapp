@@ -1,2 +1,11 @@
 <!--miniprogram/pages/find/find.wxml-->
-<text>miniprogram/pages/find/find.wxml</text>
+<view class="container">
+    <view class="header">
+        <view class="publish-container" bind:tap="onPublish">
+            <i class="iconfont icon-fabu"></i>
+        </view>
+        <view class="search-container">
+            <m-search iconfont="iconfont" icon-sousuo="icon-sousuo"></m-search>
+        </view>
+    </view>
+</view>
