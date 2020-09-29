@@ -8,4 +8,5 @@
             <m-search iconfont="iconfont" icon-sousuo="icon-sousuo"></m-search>
         </view>
     </view>
+    <m-bottom modalShow="{{modalShow}}"></m-bottom>
 </view>

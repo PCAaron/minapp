@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    modalShow: false //控制底部弹出层是否显示
   },
 
   /**
@@ -17,7 +17,9 @@ Page({
 
   // 发布功能
   onPublish() {
-
+    this.setData({
+      modalShow: true
+    })
   },
 
   /**
