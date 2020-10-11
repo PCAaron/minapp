@@ -5,14 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    modalShow: false //控制底部弹出层是否显示
+    modalShow: false, //控制底部弹出层是否显示
+    blogList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadBlogList()
+  },
+  loadBlogList(start = 0) {
+    wx.cloud.callFunction({
+      name: 'blog',
+      data: {
+        $url:'list',
+        start: start,
+        count: 10
+      }
+    }).then(res=>{
+      this.setData({
+        blogList: this.data.blogList.concat(res.result)
+      })
+      wx.stopPullDownRefresh()
+    })
+  },
 
+  goComment(e) {
+    wx.navigateTo({
+      url:'../../pages/comment/comment?blogId=' + e.target.dataset.blogid
+    })
   },
 
   // 发布功能
@@ -88,14 +110,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      blogList: []
+    })
+    this.loadBlogList()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.loadBlogList(this.data.blogList.length)
   },
 
   /**

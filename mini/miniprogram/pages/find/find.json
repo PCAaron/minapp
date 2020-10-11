@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "m-search":"/components/search/search",
-    "m-login": "/components/login/login"
+    "m-login": "/components/login/login",
+    "m-card": "/components/blogcard/blogcard"
   },
-  "navigationBarTitleText": "动态"
+  "navigationBarTitleText": "动态",
+  "enablePullDownRefresh": true
 }

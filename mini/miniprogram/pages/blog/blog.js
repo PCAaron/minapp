@@ -90,7 +90,10 @@ Page({
     // 图片-> 云存储 返回fileid
     let promiseArr = []
     let fileIds = []
-    wx.showLoading()
+    wx.showLoading({
+      title:'发布中',
+      mask: true
+    })
     //图片上传
     for(let i=0,len=this.data.images.length;i<len;i++){
       let p = new Promise((resolve,reject) => {
@@ -123,7 +126,10 @@ Page({
       }).then(res=>{
         wx.showToast('发布成功')
         wx.hideLoading()
-        wx.navigateBack()
+        wx.navigateBack() // 返回并刷新数据
+        const pages = getCurrentPages() 
+        const prevPage = pages[pages.length - 2]
+        prevPage.onPullDownRefresh()
       }).catch(err=>{
         wx.hideLoading()
         wx.showToast('发布失败')

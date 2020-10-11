@@ -8,6 +8,15 @@
             <m-search iconfont="iconfont" icon-sousuo="icon-sousuo"></m-search>
         </view>
     </view>
+
+    <view class="blog-list">
+        <block wx:for="{{blogList}}" wx:key="_id">
+            <view class="blog-panel">
+                <m-card data-blogid="{{item._id}}" bind:tap="goComment" blog="{{item}}"></m-card>
+            </view>
+        </block>
+    </view>
+
     <m-login modalShow="{{modalShow}}"
         bind:loginSuccess="onloginSuccess"
         bind:loginFail="onloginFail"
