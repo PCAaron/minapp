@@ -1,4 +1,5 @@
 // miniprogram/pages/find/find.js
+let keyword=''
 Page({
 
   /**
@@ -21,6 +22,7 @@ Page({
       data: {
         $url:'list',
         start: start,
+        keyword,
         count: 10
       }
     }).then(res=>{
@@ -76,6 +78,13 @@ Page({
     wx.showModal({
       title: '授权用户才能发布动态'
     })
+  },
+  onSearch(e) {
+    this.setData({
+      blogList: []
+    })
+    keyword = e.detail.keyword
+    this.loadBlogList()
   },
 
   /**

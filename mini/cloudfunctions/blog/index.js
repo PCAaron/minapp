@@ -18,7 +18,19 @@ exports.main = async (event, context) => {
   })
 
   app.router('list', async (ctx, next) => {
-    let blogList = await blogCollection.skip(event.start).limit(event.count) // 分页查询
+    const keyword = event.keyword
+    let w={}
+    if(keyword.trim() != ''){
+      w={
+        content: db.RegExp({
+          regexp: keyword,
+          options: 'i' 
+        })
+      }
+    }
+
+    let blogList = await blogCollection.where(w) // 模糊查询
+      .skip(event.start).limit(event.count) // 分页查询
       .orderBy('createTime','desc').get().then(res=>{ //按createTime逆序获取
         return res.data
       })
