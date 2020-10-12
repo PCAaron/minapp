@@ -2,7 +2,8 @@
   "usingComponents": {
     "m-search":"/components/search/search",
     "m-login": "/components/login/login",
-    "m-card": "/components/blogcard/blogcard"
+    "m-card": "/components/blogcard/blogcard",
+    "m-coment": "/components/blogcoment/blogcoment"
   },
   "navigationBarTitleText": "动态",
   "enablePullDownRefresh": true

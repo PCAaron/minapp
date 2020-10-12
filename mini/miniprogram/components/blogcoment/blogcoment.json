@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "m-login": "/components/login/login",
+    "m-modal": "/components/bottommodal/bottommodal"
+  }
+}

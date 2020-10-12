@@ -1,0 +1,23 @@
+<!--components/blogcoment/blogcoment.wxml-->
+<view class="ctrl">
+    <view class="ctrl-item" bind:tap="onComment">
+        <i class="iconfont icon-pinglun icon"></i>
+        <text>评论</text>
+    </view>
+    <view class="ctrl-item share">
+        <i class="iconfont icon-fenxiang icon"></i>
+        <text>分享</text>
+    </view>
+</view>
+
+<m-login modalShow="{{loginShow}}" 
+    bind:loginSuccess="onloginSuccess"
+    bind:loginFail="onloginFail"/>
+
+<m-modal modalShow="{{modalShow}}">
+    <view slot="modal-content">
+        <textarea name="content" class="comment-content" placeholder="写评论"
+            value="{{content}}" fixed="{{true}}"></textarea>
+        <button class="send">发送</button>
+    </view>
+</m-modal>

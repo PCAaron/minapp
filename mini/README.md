@@ -13,6 +13,12 @@
 - tcb-router是一个koa风格的云函数路由库     
   用法详见：cloudfunctions/music/index.js       
 
+## 小程序端 && 云函数请求接口差异       
+
+- 权限管理差异：小程序端默认获取当前用户内容，云函数可获取所有用户内容      
+- 日期显示差异：小程序端返回Object类型，云函数返回String类型        
+- 数据量差异：小程序一次只能查询20条，云函数可查询100条     
+
 ## 酷狗音乐接口
 
 - 音乐详情：https://www.kugou.com/yy/index.php?r=play/getdata&hash=xxx      
