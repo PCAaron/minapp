@@ -16,8 +16,8 @@
 
 <m-modal modalShow="{{modalShow}}">
     <view slot="modal-content">
-        <textarea name="content" class="comment-content" placeholder="写评论"
+        <textarea name="content" bindinput="onInput" class="comment-content" placeholder="写评论"
             value="{{content}}" fixed="{{true}}"></textarea>
-        <button class="send">发送</button>
+        <button class="send" bind:tap="onSend">发送</button>
     </view>
 </m-modal>

@@ -16,6 +16,7 @@
                 <m-coment iconfont="iconfont"
                     icon-pinglun="icon-pinglun"
                     icon-fenxiang="icon-fenxiang"
+                    blogId="{{item._id}}"
                 ></m-coment>
             </view>
         </block>

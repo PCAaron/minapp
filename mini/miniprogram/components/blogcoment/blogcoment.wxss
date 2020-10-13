@@ -22,14 +22,17 @@
     margin-right: 12rpx;
     font-size: 32rpx;
 }
-
+textarea{
+    text-align: left !important;
+    padding: 10rpx;
+}
 .ctrl-item text{
     font-size: 32rpx;
 }
 .send{
     background-color: #FF59D3;
     color: #fff;
-    margin-right: 20rpx !important;
+    margin-right: 10rpx !important;
     font-size: 24rpx;
     height: 68rpx !important;
     min-height: 68rpx !important;
