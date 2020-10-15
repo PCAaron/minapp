@@ -10,6 +10,8 @@ const TcbRouter = require('tcb-router')
 const db = cloud.database() // 初始化数据库
 
 const blogCollection = db.collection('blog') // 获取blog
+const commentCollection = db.collection('blog-comment')
+const MAX_LIMIT = 100
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -35,6 +37,44 @@ exports.main = async (event, context) => {
         return res.data
       })
       ctx.body = blogList
+  })
+
+  app.router('detail', async(ctx,next) => {
+    let blogId = event.blogId
+    // 查询详情
+    let detail = await blogCollection.where({
+      _id: blogId
+    }).get().then(res => {
+      return res.data
+    })
+    // 评论查询
+    const countResult = await commentCollection.count()
+    const total = countResult.total
+    let commnetList = {
+      data: []
+    }
+    if(total > 0){
+      const batchTimes = Math.ceil(total/MAX_LIMIT)
+      const tasks =[]
+      for(let i=0;i<batchTimes;i++){
+        let promise = commentCollection.skip(i*MAX_LIMIT)
+          .limit(MAX_LIMIT).where({
+            blogId
+          }).orderBy('createTime', 'desc').get()
+        tasks.push(promise)
+      }
+      if(tasks.length > 0){
+        commnetList = (await Promise.all(tasks)).reduce((acc,cur)=>{
+          return {
+            data: acc.data.concat(cur.data)
+          }
+        })
+      }
+    }
+    ctx.body = {
+      commnetList,
+      detail
+    }
   })
 
   return app.serve()

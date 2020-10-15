@@ -6,7 +6,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    blogId: String
+    blogId: String,
+    blog: Object
   },
   externalClasses: ['iconfont','icon-pinglun','icon-fenxiang'],
   /**
@@ -59,14 +60,10 @@ Component({
         content:'授权用户才能进行评论'
       })
     },
-    onInput(e){
-      this.setData({
-        content: e.detail.value
-      })
-    },
-    onSend() {
+    onSend(e) {
       // 插入数据库
-      let content = this.data.content
+      let content = e.detail.value.content
+      let formId = e.detail.formId
       if(content.trim() == ''){
         wx.showModal({
           content: '评论内容不能为空'
@@ -86,6 +83,18 @@ Component({
           avatarUrl: userInfo.avatarUrl
         }
       }).then(res=>{
+
+        wx.cloud.callFunction({
+          name: 'sendMessage',
+          data: {
+            content,
+            formId,
+            blogId: this.properties.blogId
+          }
+        }).then(res=> {
+          console.log(res)
+        })
+
         wx.hideLoading()
         wx.showToast({
           title:'评论成功'
@@ -94,6 +103,9 @@ Component({
           modalShow: false,
           content: ''
         })
+
+        // 父元素刷新评论页面
+        this.triggerEvent('refreshCommentList')
       })
 
       // 推送模板消息

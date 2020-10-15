@@ -1,2 +1,30 @@
 <!--miniprogram/pages/comment/comment.wxml-->
-<text>miniprogram/pages/comment/comment.wxml</text>
+<scroll-view scroll-y="{{true}}" class="container">
+    <view class="blog-card">
+        <m-card blog="{{blog}}"></m-card>
+    </view>
+
+    <view class="tab">
+        <view class="tab-item">评论列表</view>
+    </view>
+
+    <view class="comment-list">
+        <block wx:for="{{commentList}}" wx:key="_id">
+            <view class="comment">
+                <view class="comment-title">
+                    <image class="comment-portrait" src="{{item.avatarUrl}}"/>
+                    <text class="comment-nickname">{{item.nickName}}</text>
+                </view>
+                <view class="comment-content">
+                    {{item.content}}
+                </view>
+                <view class="comment-time">{{item.createTime}}</view>
+            </view>
+        </block>
+    </view>
+
+</scroll-view>
+
+<view class="blog-ctrl">
+    <m-ctrl bind:refreshCommentList="getBlogDetail" blogId="{{blog._id}}" iconfont="iconfont" icon-pinglun="icon-pinglun" icon-fenxiang="icon-fenxiang"></m-ctrl>
+</view>

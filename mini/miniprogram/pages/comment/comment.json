@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "m-card": "/components/blogcard/blogcard",
+    "m-ctrl": "/components/blogcoment/blogcoment"
+  },
+  "navigationBarTitleText": "博客详情"
 }

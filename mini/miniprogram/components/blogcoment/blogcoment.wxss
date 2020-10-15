@@ -40,3 +40,23 @@ textarea{
     width: 144rpx !important;
     padding: 0;
 }
+.share-btn{
+    background-color: #fff;
+    color:rgba(40,47,60,.8);
+    padding: 0;
+    height: 100%;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60rpx !important;
+    min-height: 60rpx !important;
+    font-weight: 400;
+}
+.share-btn::after{
+    display: none;
+}
+.share-hover::after{
+    border:0;
+}

@@ -1,1 +1,50 @@
 /* miniprogram/pages/comment/comment.wxss */
+.tab{
+    margin-top: 20rpx;
+    background-color: #fff;
+    padding:10rpx 20rpx;
+    columns: #939393;
+}
+
+.comment-list{
+    background-color: #fff;
+    padding: 0 20rpx;
+    margin-bottom: 60rpx;
+}
+.comment{
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #eee;
+}
+.comment:last-child{
+    border-bottom: 1px solid transparent;
+}
+.comment-title{
+    display: flex;
+    align-items: center;
+}
+.comment-portrait{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+.comment-nickname{
+    flex: 1;
+}
+.comment-content{
+    padding: 10px 0;
+}
+.comment-time{
+    color:#666666;
+    font-size: 24rpx;
+}
+.blog-ctrl{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    border-top: 1px solid #eee;
+}
