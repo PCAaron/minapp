@@ -32,6 +32,11 @@
   选中图标->加入项目->Font class：生成代码->在浏览器中打开代码目录并下载至小程序目录内
   -> 全局引入：app.wxss中引入文件 -> text标签中使用     
 
+## 传统微信登录 VS 云开发微信登录       
+
+![传统微信登录](../statics/images/old-wx-login.png)
+![云开发微信登录](../statics/images/yun-wx-login.jpg) 
+
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
