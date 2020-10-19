@@ -1,2 +1,18 @@
 <!--miniprogram/pages/bloghistory/bloghistory.wxml-->
-<text>miniprogram/pages/bloghistory/bloghistory.wxml</text>
+<view >
+    <block wx:for="{{blogList}}" wx:key="_id">
+        <view class="blog-panel">
+            <m-card blog="{{item}}"
+                bind:tap="goComment"
+                data-blogid="{{item._id}}"
+            ></m-card>
+            <m-coment
+                blogId="{{item._id}}"
+                blog="{{item}}"
+                iconfont="iconfont"
+                icon-pinglun="icon-pinglun"
+                icon-fenxiang="icon-fenxiang"
+            ></m-coment>
+        </view>
+    </block>
+</view>

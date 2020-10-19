@@ -1,1 +1,4 @@
 /* miniprogram/pages/bloghistory/bloghistory.wxss */
+.blog-panel{
+    margin-bottom: 20rpx;
+}
