@@ -14,6 +14,22 @@ Page({
   onLoad: function (options) {
 
   },
+  qrcode() {
+    wx.showLoading({
+      title:"生成中"
+    })
+    wx.cloud.callFunction({
+      name: 'qrcode'
+    }).then(res=>{
+      wx.hideLoading()
+      const fileId = res.result
+      console.log(res)
+      wx.previewImage({
+        current: fileId,
+        urls: [fileId]
+      })
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

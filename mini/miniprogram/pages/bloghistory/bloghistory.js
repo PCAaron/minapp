@@ -35,6 +35,11 @@ Page({
       wx.hideLoading()
     })
   },
+  goComment(e){
+    wx.navigateTo({
+      url: '../comment/comment?blogId=' + e.target.dataset.blogid
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -81,7 +86,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (e) {
+    const blog =e.targe.dataset.blog
+    return {
+      title:blog.content,
+      path: `/pages/comment/comment?blogId=${blog._id}`
+    }
   }
 })
