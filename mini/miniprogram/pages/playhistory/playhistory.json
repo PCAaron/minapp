@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "m-music": "/components/musicitem/musicitem"
+  },
+  "navigationBarTitleText": "最近播放"
 }

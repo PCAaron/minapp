@@ -14,10 +14,11 @@ App({
         traceUser: true, // 云开发控制台中查看访问过的用户
       })
     }
-
+    this.getOpenid()
     this.globalData = {
       playingMusicId: -1,
-      userInfo: null
+      userInfo: null,
+      openid: -1
     }
   },
   setPlayMusicId(musicId){
@@ -31,5 +32,16 @@ App({
   },
   getUserInfo(){
     return this.globalData.userInfo
+  },
+  getOpenid() {
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then(res => {
+      const openid = res.result.openid
+      this.globalData.openid = openid
+      if(wx.getStorageSync(openid)==''){
+        wx.setStorageSync(this.globalData.openid, [])
+      } 
+    })
   }
 })
