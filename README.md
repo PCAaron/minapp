@@ -44,3 +44,11 @@ mini：微信小程序目录
 │   └── sitemap.json // ---- 设置小程序能否被索引
 └── project.config.json  // ---- 小程序配置文件
 ````
+
+## 小程序原理剖析       
+
+[小程序原理剖析](./PRINCIPLE.md)        
+
+## 协议     
+
+[MIT](./LICENSE)

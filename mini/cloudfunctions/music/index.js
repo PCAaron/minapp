@@ -27,7 +27,8 @@ exports.main = async (event, context) => {
   app.router('playlist', async (ctx,next) => {
     ctx.body = await cloud.database().collection('playlist')
       .skip(event.start).limit(event.count) // 分页信息
-      .orderBy('createTime','desc').get() // 排序方式
+      // .orderBy('createTime','desc') // 排序方式
+      .get() 
       .then(res => {
         return res
       })
