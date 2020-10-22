@@ -16,7 +16,7 @@
 .detail-img{
     width: 640rpx;
     height: 240rpx;
-    margin-right: 24rpx;
+    /* margin-right: 24rpx; */
     border-radius: 6rpx;
 }
 .detail-info{
@@ -30,6 +30,7 @@
     padding: 20rpx;
     box-sizing: border-box;
     align-items: center;
+    justify-content:center
 }
 .detail{
     flex-grow: 1;

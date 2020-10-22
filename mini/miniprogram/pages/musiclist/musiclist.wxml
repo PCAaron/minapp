@@ -3,8 +3,8 @@
 <view class="detail-mask"></view>
 <view class="detail-info">
     <image src="{{info.bannerurl}}"  class="detail-img"></image>
-    <view class="detail">
+    <!-- <view class="detail">
         <view class="detail-nm">{{info.rankname}}</view>
-    </view>
+    </view> -->
 </view>
 <m-music musiclist="{{musiclist}}"/>

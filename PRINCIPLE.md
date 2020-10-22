@@ -29,6 +29,21 @@
 - 小程序销毁(进入后台大概超过五分钟被小程序主动销毁/占用内存过高微信主动销毁)       
   
 ![小程序运行机制与更新机制](statics/images/principle3.png)
+
+## 小程序性能与体验     
+
+![小程序性能与体验](https://developers.weixin.qq.com/miniprogram/dev/framework/audits/performance.html)
+
+## 详解setData工作原理
+
+- 避免setData的数据过大，setData在设置值时候有范围限定，最大1M，因为每次执行setData时候，数据都会从逻辑层传递到视图层，如果数据量大则会增加通信时间       
+- 避免setData的调用过于频繁     
+- 避免将未绑定在WXML的变量传入setData，setData会处理框架渲染方面的操作，减少性能消耗        
+
+
+
+
+
   
 
 
