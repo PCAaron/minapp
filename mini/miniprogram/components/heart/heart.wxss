@@ -1,0 +1,23 @@
+/* components/heart/heart.wxss */
+.container{
+    position: fixed;
+    bottom: 60rpx;
+    right: 60rpx;
+    z-index: 1;
+}
+.heart{
+    width: 100rpx;
+    height: 100rpx;
+    animation: move 1.5s infinite;
+}
+@keyframes move{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

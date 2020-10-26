@@ -1,0 +1,28 @@
+<!--miniprogram/pages/blessing/blessing.wxml-->
+<view class="container">
+    <view class="pic">
+        <image src="../../images/love.jpg" />
+    </view>
+    <view class="blessing-desc">
+        <text>2016年4月18日</text>三生有幸遇见你
+    </view>
+    <view class="blessing-desc">
+        <text>2016年8月22日</text>愿尽余生皆是你
+    </view>
+    <view class="blessing-name">
+        小潘潘
+        <image src="../../images/big-heart.png" />
+        小小熊
+    </view>
+    <view class="blessing-sec">
+        在一起{{together}}了
+    </view>
+  <view class="send-blessing">
+      点击右边小红心，为他们送上幸福
+      <canvas canvas-id="mycanvas" class="canvas" />
+      <image src="../../images/red-heart.png" class="heart" bindtap="onClickImage" style="{{style_img}}"></image>
+  </view>
+  <view class="blessing-list">
+      共收到100分祝福
+  </view>
+</view>

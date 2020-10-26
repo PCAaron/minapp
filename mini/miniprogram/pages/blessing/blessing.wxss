@@ -1,0 +1,69 @@
+/* miniprogram/pages/blessing/blessing.wxss */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pic{
+    margin-top: 80rpx;
+    display: inline-flex;
+    width: 640rpx;
+    height: 480rpx;
+    border:2px solid #FF59D3;
+}
+.blessing-desc{
+    font-size: 36rpx;
+    padding: 10rpx;
+}
+.blessing-desc text{
+    color: #FF59D3;
+    padding-right: 20rpx;   
+}
+.blessing-name{
+    margin: 20rpx 0 10rpx;
+}
+.blessing-name image{
+    width: 36rpx;
+    height: 36rpx;
+    animation: move 1.5s infinite;
+}
+@keyframes move{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.send-blessing{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40rpx;
+}
+.canvas {
+    background: transparent;
+    width: 90px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+  }
+  /* transform下面的属性是为了让动画看上去更自然 */
+  .heart {
+    /* position: fixed;
+    right: 45px;
+    bottom: 30px; */
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+    transform: scale(1);
+    transition: ease all;
+    transition-duration: 700ms;
+  }

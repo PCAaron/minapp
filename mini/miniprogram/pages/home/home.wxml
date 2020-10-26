@@ -5,8 +5,13 @@
         </swiper-item>
     </block>
 </swiper>
+<view class="adContainer">
+    <ad unit-id="adunit-e3efbf595a29bc5d"></ad>
+</view>
 <view class="playlist-wrap">
     <block wx:for="{{playList}}" wx:key="_id">
         <m-playlist cover="{{item}}"></m-playlist>
     </block>
 </view>
+
+<m-heart/>

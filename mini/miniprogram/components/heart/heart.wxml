@@ -1,0 +1,4 @@
+<!--components/heart/heart.wxml-->
+<navigator hover-class="none" url="/pages/blessing/blessing" class="container">
+    <image class="heart"  src="../../images/big-heart.png" />
+</navigator>
