@@ -9,6 +9,8 @@ let factor = {
 let that;
 
 let timer = null; // 循环定时器
+let userInfo = null
+const db = wx.cloud.database()
 
 Page({
 
@@ -16,6 +18,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    total: 0,
+    userList: [],
+    allUser: [],
+    modalShow: false, //控制底部弹出层是否显示
     begin: '2016/08/22 00:00:00',
     together: null,
     style_img: '',
@@ -72,6 +78,42 @@ Page({
     },1000)
     //获取canvas实例
     ctx = wx.createCanvasContext('mycanvas')
+    this.loadList()
+  },
+  async loadList() {
+    // console.log(await db.collection('blessing').count())
+    wx.cloud.callFunction({
+      name: 'blessing',
+      data: {
+        $url:'list'
+      }
+    }).then(res=>{
+      // 前端过滤重复用户
+      console.log(res.result)
+      const { total,userList } = res.result
+      const idxs = this.unique(userList)
+      let _users = []
+      for (let i=0;i<idxs.length;i++) {
+        _users.push(userList[idxs[i]])
+      }
+      this.setData({
+        total,
+        allUser: userList,
+        userList: _users
+      })
+    })
+  },
+  unique(arr) {
+    let _ids = arr.map(user => user._openid)
+    let _arr = []
+    let num = []
+    for (let i=0;i<_ids.length;i++) {
+      if(!_arr.includes(_ids[i])){
+        _arr.push(_ids[i])
+        num.push(i)
+      }
+    }
+    return num
   },
   formatTimes() {
     const date1= this.data.begin;  //开始时间
@@ -189,6 +231,43 @@ Page({
     }
   },
   onClickImage: function (e) {
+    // 判断用户是否授权
+    wx.getSetting({
+      success:(res) => {
+        // 授权列表
+        if(res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            success:(res) => {
+              userInfo = res.userInfo
+              db.collection('blessing').add({ // 小程序插入数据库自带openid
+                data: {
+                  ...userInfo,
+                  createTime: db.serverDate()
+                }
+              }).then(res=>{
+                this.loadList()
+                this.imageAnimate()
+              })
+            }
+          })
+        } else {
+          this.setData({
+            modalShow: true
+          })
+        }
+      }
+    })
+  },
+  onloginSuccess(e) {
+    const detail = e.detail
+    this.onClickImage()
+  },
+  onloginFail() {
+    wx.showModal({
+      title: '请留下你的足迹'
+    })
+  },
+  imageAnimate() {
     //点击心形的时候动画效果
     that.setData({
       style_img: 'transform:scale(1.3);'

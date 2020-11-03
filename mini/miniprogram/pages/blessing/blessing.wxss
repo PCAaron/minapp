@@ -67,3 +67,15 @@
     transition: ease all;
     transition-duration: 700ms;
   }
+
+  .blessing-list{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .blessing-img{
+      width: 60rpx;
+      height: 60rpx;
+      border-radius: 50%;
+  }

@@ -23,6 +23,15 @@
       <image src="../../images/red-heart.png" class="heart" bindtap="onClickImage" style="{{style_img}}"></image>
   </view>
   <view class="blessing-list">
-      共收到100分祝福
+      共收到
+      <block wx:for="{{userList}}" wx:key="index" wx:if="{{index<4}}">
+        <image class="blessing-img" src="{{item.avatarUrl}}"/>
+      </block>
+      等送出的{{total}}份祝福
   </view>
 </view>
+
+<m-login modalShow="{{modalShow}}"
+        bind:loginSuccess="onloginSuccess"
+        bind:loginFail="onloginFail"
+></m-login>
