@@ -21,6 +21,11 @@ App({
       userInfo: null,
       openid: -1
     }
+    const userInfo = wx.getStorageSync('userInfo')
+    console.log('userinfo', userInfo)
+    if (userInfo) {
+      this.globalData.userInfo = userInfo
+    }
   },
 
   onShow(options) {
@@ -34,10 +39,12 @@ App({
     return this.globalData.playingMusicId
   },
   setUserInfo(info){
+    console.log('set', info)
+    wx.setStorage({
+      key: 'userInfo',
+      data: info
+    })
     this.globalData.userInfo = info
-  },
-  getUserInfo(){
-    return this.globalData.userInfo
   },
   getOpenid() {
     wx.cloud.callFunction({

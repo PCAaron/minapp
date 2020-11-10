@@ -1,5 +1,6 @@
 // miniprogram/pages/find/find.js
 let keyword=''
+const app = getApp()
 Page({
 
   /**
@@ -48,6 +49,7 @@ Page({
         if(res.authSetting['scope.userInfo']){
           wx.getUserInfo({
             success:(res) => {
+              app.setUserInfo(res.userInfo)
               var userInfo = res.userInfo
               var nickName = userInfo.nickName
               var avatarUrl = userInfo.avatarUrl

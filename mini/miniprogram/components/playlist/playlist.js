@@ -10,7 +10,6 @@ Component({
   // 监听器
   observers: {
     ['cover.issue'](count) {
-      console.log(count)
       this.setData({
         _count: this._formatNumber(count, 2)
       })

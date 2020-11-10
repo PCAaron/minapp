@@ -10,6 +10,7 @@ let that;
 
 let timer = null; // 循环定时器
 const db = wx.cloud.database()
+const app = getApp()
 
 Page({
 
@@ -79,6 +80,9 @@ Page({
     //获取canvas实例
     ctx = wx.createCanvasContext('mycanvas')
     this.loadList()
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
   async loadList() {
     // console.log(await db.collection('blessing').count())
@@ -238,6 +242,7 @@ Page({
         if(res.authSetting['scope.userInfo']){
           wx.getUserInfo({
             success:(res) => {
+              app.setUserInfo(res.userInfo)
               this.setData({
                 userInfo: res.userInfo
               })

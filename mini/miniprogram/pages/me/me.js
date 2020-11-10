@@ -1,4 +1,5 @@
 // miniprogram/pages/me/me.js
+const app = getApp()
 Page({
 
   /**
@@ -12,23 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-  checkUser () {
-    // 判断用户是否授权
-    wx.getSetting({
-      success:(res) => {
-        // 授权列表
-        if(res.authSetting['scope.userInfo']){
-          wx.getUserInfo({
-            success:(res) => {
-              this.setData({
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
-      }
+    this.setData({
+      userInfo: app.globalData.userInfo
     })
   },
   qrcode() {

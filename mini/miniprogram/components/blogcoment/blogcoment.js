@@ -1,6 +1,7 @@
 // components/blogcoment/blogcoment.js
 let userInfo = ''
 const db = wx.cloud.database()
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -30,6 +31,7 @@ Component({
           if(res.authSetting['scope.userInfo']){
             wx.getUserInfo({
               success: (res) => {
+                app.setUserInfo(res.userInfo)
                 userInfo = res.userInfo
                 // 显示评论弹出层
                 this.setData({
