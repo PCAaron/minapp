@@ -29,6 +29,9 @@
       </block>
       等送出的{{total}}份祝福
   </view>
+  <navigator wx:if="{{userInfo}}" hover-class="none" url="/pages/life/life" class="content">
+    <view  class="blessing-look">查看爱情故事</view>
+  </navigator>
 </view>
 
 <m-login modalShow="{{modalShow}}"

@@ -1,0 +1,16 @@
+<!--miniprogram/pages/life/life.wxml-->
+<scroll-view class="scroll-box" scroll-x scroll-with-animation
+  scroll-into-view="{{toView}}"
+  bindtouchstart="touchStart"
+  bindtouchend="touchEnd">
+    <view wx:for="{{list}}" wx:key="{{item}}" class="card-box" id="card_{{index}}" >
+      <view class="card">
+        <image class="card-img" src="{{item.img}}" mode="aspectFit"/>
+      </view>
+      <view class="desc">
+        <view class="card-times">{{item.times}}</view>
+        <view class="card-txt">{{item.title}}</view>
+        <view class="card-address">{{item.address}}</view>
+      </view>
+    </view>
+</scroll-view>

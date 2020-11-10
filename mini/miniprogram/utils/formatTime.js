@@ -1,5 +1,4 @@
-module.exports = (date) => {
-    let fmt = 'yyyy-MM-dd hh:mm:ss'
+module.exports = (date, fmt = 'yyyy-MM-dd hh:mm:ss') => {
     const o = {
         'M+': date.getMonth() + 1,
         'd+': date.getDate(),
@@ -16,5 +15,6 @@ module.exports = (date) => {
             fmt = fmt.replace(RegExp.$1,o[k].toString().length == 1 ? '0' + o[k] : o[k])
         }
     }
+    console.log('fmt', fmt)
     return fmt
 }

@@ -9,7 +9,6 @@ let factor = {
 let that;
 
 let timer = null; // 循环定时器
-let userInfo = null
 const db = wx.cloud.database()
 
 Page({
@@ -18,6 +17,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userInfo: null,
     total: 0,
     userList: [],
     allUser: [],
@@ -238,10 +238,12 @@ Page({
         if(res.authSetting['scope.userInfo']){
           wx.getUserInfo({
             success:(res) => {
-              userInfo = res.userInfo
+              this.setData({
+                userInfo: res.userInfo
+              })
               db.collection('blessing').add({ // 小程序插入数据库自带openid
                 data: {
-                  ...userInfo,
+                  ...res.userInfo,
                   createTime: db.serverDate()
                 }
               }).then(res=>{

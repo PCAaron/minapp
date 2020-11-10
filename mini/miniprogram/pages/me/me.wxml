@@ -21,6 +21,13 @@
             <i class="iconfont icon-xiangyou"></i>
         </navigator>
     </view>
+    <view class="nav-item" wx:if="{{userInfo}}">
+        <navigator hover-class="none" url="/pages/life/life" class="content">
+            <i class="iconfont icon-aiqingyulangman- icon-right"></i>
+            <text class="text">点滴生活</text>
+            <i class="iconfont icon-xiangyou"></i>
+        </navigator>
+    </view>
     <view class="nav-item">
         <view class="content" bind:tap="qrcode">
             <i class="iconfont icon-ico icon-right"></i>

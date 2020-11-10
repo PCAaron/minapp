@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "m-login": "/components/login/login"
-  }
+  },
+  "navigationBarTitleText": "有幸遇到你"
 }

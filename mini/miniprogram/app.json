@@ -9,7 +9,8 @@
     "pages/comment/comment",
     "pages/playhistory/playhistory",
     "pages/bloghistory/bloghistory",
-    "pages/blessing/blessing"
+    "pages/blessing/blessing",
+    "pages/life/life"
   ],
   "requiredBackgroundModes": [
     "audio"

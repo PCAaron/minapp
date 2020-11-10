@@ -79,3 +79,9 @@
       height: 60rpx;
       border-radius: 50%;
   }
+
+  .blessing-look{
+      margin: 20rpx;
+      color: #FF59D3;
+      text-decoration: initial;
+  }

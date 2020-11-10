@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null
   },
 
   /**
@@ -13,6 +13,23 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  checkUser () {
+    // 判断用户是否授权
+    wx.getSetting({
+      success:(res) => {
+        // 授权列表
+        if(res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            success:(res) => {
+              this.setData({
+                userInfo: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
   },
   qrcode() {
     wx.showLoading({
