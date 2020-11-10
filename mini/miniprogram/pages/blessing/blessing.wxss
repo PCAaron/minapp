@@ -10,14 +10,14 @@
     display: inline-flex;
     width: 640rpx;
     height: 480rpx;
-    border:2px solid #FF59D3;
+    border:2px solid #FFA5C2;
 }
 .blessing-desc{
     font-size: 36rpx;
     padding: 10rpx;
 }
 .blessing-desc text{
-    color: #FF59D3;
+    color: #FFA5C2;
     padding-right: 20rpx;   
 }
 .blessing-name{
@@ -82,6 +82,6 @@
 
   .blessing-look{
       margin: 20rpx;
-      color: #FF59D3;
+      color: #FFA5C2;
       text-decoration: initial;
   }

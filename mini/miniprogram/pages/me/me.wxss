@@ -41,7 +41,7 @@ page{
     padding: 30rpx 20rpx;
 }
 .icon-right{
-    color:#FF59D3;
+    color:#FFA5C2;
 }
 .text{
     padding: 0 20rpx;

@@ -76,7 +76,7 @@
     align-items: center;
 }
 .control .iconfont{
-    color: #FF59D3
+    color: #FFA5C2
 }
 .icon-shangyishou, .icon-xiayishou{
     font-size: 80rpx;

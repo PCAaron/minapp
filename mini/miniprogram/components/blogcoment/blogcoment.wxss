@@ -30,7 +30,7 @@ textarea{
     font-size: 32rpx;
 }
 .send{
-    background-color: #FF59D3;
+    background-color: #FFA5C2;
     color: #fff;
     margin-right: 10rpx !important;
     font-size: 24rpx;

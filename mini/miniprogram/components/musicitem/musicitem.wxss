@@ -20,5 +20,5 @@
     text-overflow: ellipsis;
 }
 .playing view{
-    color: #FF59D3;
+    color: #FFA5C2;
 }

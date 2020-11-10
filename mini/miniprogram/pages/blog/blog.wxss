@@ -25,7 +25,7 @@
     padding-right: 30rpx;
 }
 .send-btn{
-    background-color: #FF59D3;
+    background-color: #FFA5C2;
     color: #fff;
     font-size: 24rpx;
     margin-left: 20rpx !important;

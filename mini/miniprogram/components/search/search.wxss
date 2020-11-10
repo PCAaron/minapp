@@ -14,7 +14,7 @@
     padding-left: 60rpx;
 }
 .search{
-    background-color: #FF59D3;
+    background-color: #FFA5C2;
     color: #fff;
     margin-left: 20rpx !important;
     font-size: 24rpx;

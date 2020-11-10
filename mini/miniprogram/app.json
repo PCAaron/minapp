@@ -18,13 +18,13 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FF59D3",
+    "navigationBarBackgroundColor": "#FFA5C2",
     "navigationBarTitleText": "小小熊の音乐",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#515151",
-    "selectedColor": "#FF59D3",
+    "selectedColor": "#FFA5C2",
     "list": [
       {
         "pagePath": "pages/home/home",
