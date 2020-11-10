@@ -1,5 +1,5 @@
 // miniprogram/pages/home/home.js
-const MAX_LIMIT = 9
+const MAX_LIMIT = 26
 
 Page({
 
@@ -92,7 +92,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getRankList()
+    // 取消分页
+    // this.getRankList()
   },
 
   /**

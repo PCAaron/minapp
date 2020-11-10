@@ -1,6 +1,6 @@
 /* components/playlist/playlist.wxss */
 .playlist-container{
-    width: 220rpx;
+    width: 350rpx;
     position: relative;
     padding-bottom: 20rpx;
 }

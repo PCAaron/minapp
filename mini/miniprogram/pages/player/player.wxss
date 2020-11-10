@@ -49,6 +49,14 @@
 .play.player-disc::after{
     transform: rotate(0deg);
 }
+
+.player-mask-img{
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+    opacity: .2;
+}
+
 .player-img{
     width: 368rpx;
     height: 368rpx;

@@ -2,6 +2,5 @@
   "usingComponents": {
     "m-playlist": "/components/playlist/playlist",
     "m-heart": "/components/heart/heart"
-  },
-  "enablePullDownRefresh": true
+  }
 }
