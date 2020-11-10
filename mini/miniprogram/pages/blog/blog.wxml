@@ -4,6 +4,11 @@
         bindinput="onInput" maxlength="140" auto-focus="{{true}}"
         bindfocus="onFocus" bindblur="onBlur"
     ></textarea>
+    <view class="location" bind:tap="getLocation">
+        <i class="iconfont icon-location"></i>
+        <text wx:if="{{location && location.name}}">{{location.name}}</text>
+        <text wx:else>所在位置</text>
+    </view>
     <view class="image-list">
         <block wx:for="{{images}}" wx:key="*this">
             <view class="image-wrap">

@@ -12,6 +12,11 @@
     "pages/blessing/blessing",
     "pages/life/life"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序动态的位置显示" 
+    }
+  },
   "requiredBackgroundModes": [
     "audio"
   ],

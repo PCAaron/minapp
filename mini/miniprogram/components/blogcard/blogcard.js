@@ -18,6 +18,7 @@ Component({
       }
     }
   },
+  externalClasses: ['iconfont','icon-location'],
 
   /**
    * 组件的初始数据

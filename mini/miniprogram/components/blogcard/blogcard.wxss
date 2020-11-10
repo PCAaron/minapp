@@ -55,3 +55,11 @@ page{
 .blog-nickName{
     font-size: 32rpx;
 }
+
+.blog-location{
+    display: flex;
+    font-size: 24rpx;
+    color: #474747;
+    vertical-align: middle;
+    margin: 10rpx 0;
+}

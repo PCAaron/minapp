@@ -24,6 +24,15 @@
     font-size: 32rpx;
     padding-right: 30rpx;
 }
+.location{
+    border-top: 1rpx dotted #ccc;
+    border-bottom: 1rpx dotted #ccc;
+    padding: 20rpx 0;
+}
+.icon-location{
+    color: #FFA5C2;
+    margin-right: 10rpx;
+}
 .send-btn{
     background-color: #FFA5C2;
     color: #fff;

@@ -13,7 +13,8 @@ Page({
     wordNum: 0, //输入文字个数
     footerBottom: 0,
     images: [],
-    selectPhoto: true
+    selectPhoto: true,
+    location: null
   },
 
   /**
@@ -22,6 +23,50 @@ Page({
   onLoad: function (options) {
     console.log(options)
     userInfo = options
+  },
+
+  getLocation() {
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {
+          wx.showModal({
+            title: '请求授权当前位置',
+            content: '需要获取您的地理位置，请确认授权',
+            success: (res) => {
+              if (res.confirm) {
+                wx.openSetting({
+                  success: (dataAu) => {
+                    if (dataAu.authSetting["scope.userLocation"] == true) {
+                      //再次授权，调用wx.getLocation的API
+                      this.loadLocation()
+                    }
+                  }
+                })
+              }
+            }
+          })
+        } else {
+          //调用wx.getLocation的API
+          this.loadLocation()
+        }
+      }
+    })
+  },
+
+  loadLocation() {
+    wx.chooseLocation({
+      success: res=> {
+        let location = {
+          address: res.address,
+          name: res.name,
+          latitude: res.latitude,
+          longitude: res.longitude
+        }
+        this.setData({
+          location
+        })
+      },
+    })
   },
 
   onInput(e) {
@@ -121,7 +166,8 @@ Page({
           ...userInfo,
           content,
           img: fileIds,
-          createTime: db.serverDate()
+          createTime: db.serverDate(),
+          location: this.data.location
         }
       }).then(res=>{
         wx.showToast('发布成功')
