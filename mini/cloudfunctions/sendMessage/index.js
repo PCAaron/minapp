@@ -1,8 +1,10 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 
+const CLOUD_ENV = 'test-music-ruu6d' // backend-vkv6p
+
 cloud.init({
-  env: 'test-music-ruu6d'
+  env: CLOUD_ENV
 })
 
 // 云函数入口函数

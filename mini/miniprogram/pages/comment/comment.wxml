@@ -1,7 +1,7 @@
 <!--miniprogram/pages/comment/comment.wxml-->
 <scroll-view scroll-y="{{true}}" class="container">
     <view class="blog-card">
-        <m-card blog="{{blog}}"></m-card>
+        <m-card blog="{{blog}}" iconfont="iconfont" icon-location="icon-location"></m-card>
     </view>
 
     <view class="tab">

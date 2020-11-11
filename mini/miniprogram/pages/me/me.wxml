@@ -17,7 +17,7 @@
     <view class="nav-item">
         <navigator hover-class="none" url="/pages/bloghistory/bloghistory" class="content">
             <i class="iconfont icon-shoucang icon-right"></i>
-            <text class="text">我的发现</text>
+            <text class="text">我的动态</text>
             <i class="iconfont icon-xiangyou"></i>
         </navigator>
     </view>
@@ -25,6 +25,13 @@
         <navigator hover-class="none" url="/pages/life/life" class="content">
             <i class="iconfont icon-aiqingyulangman- icon-right"></i>
             <text class="text">点滴生活</text>
+            <i class="iconfont icon-xiangyou"></i>
+        </navigator>
+    </view>
+    <view class="nav-item">
+        <navigator hover-class="none" url="/pages/about/about" class="content">
+            <i class="iconfont icon-guanyu icon-right"></i>
+            <text class="text">关于项目</text>
             <i class="iconfont icon-xiangyou"></i>
         </navigator>
     </view>

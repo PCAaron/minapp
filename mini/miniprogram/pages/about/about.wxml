@@ -1,0 +1,23 @@
+<!--miniprogram/pages/about/about.wxml-->
+<view class="container">
+    <view  class="header">爱情小副手</view>
+    <view class="main">
+        <view class="subtitle">背景</view>
+        <view class="desc">其实一直都想为女票做一款专属的应用，却苦于不知改如何构造这款应用，所以迟迟没有动手，先
+        如今也是想干就完事，逐步迭代吧，于是，就有了这款1.0的爱情小副手。</view>
+        <view class="subtitle">项目名</view>
+        <view class="desc">项目名也是一直很纠结的，也是很难起的，其实最初的想法是只我的女票专属，也考虑过是否只允许我女票
+        浏览，但是之后考虑的越来越多，也希望以后的框架能越来越大，所以就不限于小小熊专属这样的名称了。</view>
+        <view class="subtitle">功能列表</view>
+        <view class="desc">简单的todo-list：音乐列表，音乐播放，动态发布，我的，有幸遇见你</view>
+        <view class="subtitle">关于源码</view>
+        <view class="desc">关于爱情小副手的源码可关注《前端美食汇》公众号后，回复“源码"来获取源码，每个功能点都可以参考commit记录来
+        开发属于你自己的小程序</view>
+        <view class="subtitle">关联公众号</view>
+        <view class="desc">项目关联了《前端美食汇》公众号，如果你也是一个程序开发者，可以关注公众号，虽然停更了一段时间，也打算
+        重新抓起，更新有用的技术文章，做个有温度的公众号，可截图扫码关注公众号，亦可微信搜索《前端美食汇》。</view>
+        <view class="center">
+            <image class="center-img" src="../../images/qrcode.jpg" mode="aspectFit" />
+        </view>
+    </view>
+</view>

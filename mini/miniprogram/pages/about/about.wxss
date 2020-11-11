@@ -1,0 +1,32 @@
+/* miniprogram/pages/about/about.wxss */
+.container{
+    padding: 20rpx 30rpx;
+}
+.header {
+    color: #FFA5C2;
+    text-align: center;
+    font-size: 42rpx;
+    padding: 6rpx 0;
+}
+.main{
+    margin: 20rpx 0;
+}
+.subtitle{
+    color:#474747;
+    font-size: 32rpx;
+    margin: 10rpx 0;
+}
+.desc {
+    color:#888;
+    font-size: 28rpx;
+    text-indent: 2rem;
+    line-height: 46rpx;
+}
+.center{
+    text-align: center;
+    margin: 30rpx;
+}
+.center-img{
+    width: 400rpx;
+    height: 400rpx;
+}

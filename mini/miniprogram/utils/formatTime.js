@@ -15,6 +15,5 @@ module.exports = (date, fmt = 'yyyy-MM-dd hh:mm:ss') => {
             fmt = fmt.replace(RegExp.$1,o[k].toString().length == 1 ? '0' + o[k] : o[k])
         }
     }
-    console.log('fmt', fmt)
     return fmt
 }

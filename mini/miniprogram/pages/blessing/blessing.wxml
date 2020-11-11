@@ -22,7 +22,7 @@
       <canvas canvas-id="mycanvas" class="canvas" />
       <image src="../../images/red-heart.png" class="heart" bindtap="onClickImage" style="{{style_img}}"></image>
   </view>
-  <view class="blessing-list">
+  <view class="blessing-list" wx:if="{{userList.length}}">
       共收到
       <block wx:for="{{userList}}" wx:key="index" wx:if="{{index<4}}">
         <image class="blessing-img" src="{{item.avatarUrl}}"/>

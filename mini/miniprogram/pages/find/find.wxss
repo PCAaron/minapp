@@ -32,3 +32,10 @@
     margin-bottom: 20rpx;
     box-sizing: border-box;
 }
+
+.blog-empty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160rpx;
+}

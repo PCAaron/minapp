@@ -5,8 +5,10 @@ const rp = require('request-promise')
 // 音乐排行榜接口
 const URL = 'http://m.kugou.com/rank/list&json=true'
 
+const CLOUD_ENV = 'test-music-ruu6d' // backend-vkv6p
+
 cloud.init({
-  env: 'test-music-ruu6d'
+  env: CLOUD_ENV
 })
 
 // 初始化云数据库

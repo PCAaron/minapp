@@ -17,6 +17,7 @@
     height: 100%;
     z-index: -2;
     background-color: #222;
+    opacity: .8;
 }
 .player-info{
     text-align: center;

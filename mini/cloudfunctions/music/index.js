@@ -16,8 +16,10 @@ const PLAY_URL = 'https://www.kugou.com'
 // let cookiejar = rp.jar();
 // cookiejar.setCookie(cookie.toString(), 'https://www.kugou.com');
 
+const CLOUD_ENV = 'test-music-ruu6d' // backend-vkv6p
+
 cloud.init({
-  env: 'test-music-ruu6d'
+  env: CLOUD_ENV
 })
 
 // 云函数入口函数

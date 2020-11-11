@@ -10,11 +10,12 @@
     "pages/playhistory/playhistory",
     "pages/bloghistory/bloghistory",
     "pages/blessing/blessing",
-    "pages/life/life"
+    "pages/life/life",
+    "pages/about/about"
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序动态的位置显示" 
+      "desc": "你的位置信息将用于小程序动态的位置显示"
     }
   },
   "requiredBackgroundModes": [
