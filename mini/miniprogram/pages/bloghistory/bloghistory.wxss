@@ -2,3 +2,9 @@
 .blog-panel{
     margin-bottom: 20rpx;
 }
+.blog-empty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160rpx;
+}

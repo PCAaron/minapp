@@ -11,7 +11,8 @@
     "pages/bloghistory/bloghistory",
     "pages/blessing/blessing",
     "pages/life/life",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/userlist/userlist"
   ],
   "permission": {
     "scope.userLocation": {

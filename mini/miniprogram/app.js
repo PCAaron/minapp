@@ -50,6 +50,7 @@ App({
     wx.cloud.callFunction({
       name: 'login'
     }).then(res => {
+      console.log('login', res)
       const openid = res.result.openid
       this.globalData.openid = openid
       if(wx.getStorageSync(openid)==''){

@@ -1,2 +1,5 @@
 <!--miniprogram/pages/playhistory/playhistory.wxml-->
 <m-music musiclist="{{musiclist}}"></m-music>
+<block wx:if="{{musiclist.length === 0}}">
+    <view class="music-empty">暂无动态</view>
+</block>

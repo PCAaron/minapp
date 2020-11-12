@@ -1,0 +1,9 @@
+<!--miniprogram/pages/userlist/userlist.wxml-->
+<view class="container">
+    <block wx:for="{{userList}}">
+        <view class="user">
+            <image class="user-avator" src="{{item.avatarUrl}}" mode="aspectFit"/>
+            <text class="user-name">{{item.nickName}}</text>
+        </view>
+    </block>
+</view>

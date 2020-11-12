@@ -1,1 +1,7 @@
 /* miniprogram/pages/playhistory/playhistory.wxss */
+.music-empty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160rpx;
+}

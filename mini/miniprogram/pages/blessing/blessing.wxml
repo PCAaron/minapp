@@ -22,12 +22,14 @@
       <canvas canvas-id="mycanvas" class="canvas" />
       <image src="../../images/red-heart.png" class="heart" bindtap="onClickImage" style="{{style_img}}"></image>
   </view>
-  <view class="blessing-list" wx:if="{{userList.length}}">
+  <view class="blessing-list" wx:if="{{allUser.length}}">
       共收到
-      <block wx:for="{{userList}}" wx:key="index" wx:if="{{index<4}}">
-        <image class="blessing-img" src="{{item.avatarUrl}}"/>
-      </block>
-      等送出的{{total}}份祝福
+      <navigator hover-class="none" url="/pages/userlist/userlist" class="content">
+        <block wx:for="{{allUser}}" wx:key="index" wx:if="{{index<4}}">
+            <image class="blessing-img" src="{{item.avatarUrl}}"/>
+        </block>
+      </navigator>
+      等{{allUser.length}}人送出的{{total}}份祝福
   </view>
   <navigator wx:if="{{userInfo}}" hover-class="none" url="/pages/life/life" class="content">
     <view  class="blessing-look">查看爱情故事</view>

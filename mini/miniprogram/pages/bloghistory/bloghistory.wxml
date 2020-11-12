@@ -15,4 +15,7 @@
             ></m-coment>
         </view>
     </block>
+    <block wx:if="{{blogList.length === 0}}">
+        <view class="blog-empty">暂无动态</view>
+    </block>
 </view>

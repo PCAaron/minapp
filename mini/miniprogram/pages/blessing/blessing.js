@@ -20,7 +20,6 @@ Page({
   data: {
     userInfo: null,
     total: 0,
-    userList: [],
     allUser: [],
     modalShow: false, //控制底部弹出层是否显示
     begin: '2016/08/22 00:00:00',
@@ -84,40 +83,29 @@ Page({
       userInfo: app.globalData.userInfo
     })
   },
-  async loadList() {
+  async loadList(user) {
     // console.log(await db.collection('blessing').count())
+    let $data = {
+      $url: 'list'
+    }
+    if (user) $data.user = user
+    console.log($data, user)
     wx.cloud.callFunction({
       name: 'blessing',
-      data: {
-        $url:'list'
-      }
+      data: $data
     }).then(res=>{
       // 前端过滤重复用户
       console.log(res.result)
       const { total,userList } = res.result
-      const idxs = this.unique(userList)
-      let _users = []
-      for (let i=0;i<idxs.length;i++) {
-        _users.push(userList[idxs[i]])
-      }
       this.setData({
         total,
-        allUser: userList,
-        userList: _users
+        allUser: userList
+      })
+      wx.setStorage({
+        key: 'allUser',
+        data: userList
       })
     })
-  },
-  unique(arr) {
-    let _ids = arr.map(user => user._openid)
-    let _arr = []
-    let num = []
-    for (let i=0;i<_ids.length;i++) {
-      if(!_arr.includes(_ids[i])){
-        _arr.push(_ids[i])
-        num.push(i)
-      }
-    }
-    return num
   },
   formatTimes() {
     const date1= this.data.begin;  //开始时间
@@ -251,8 +239,11 @@ Page({
                   ...res.userInfo,
                   createTime: db.serverDate()
                 }
-              }).then(res=>{
-                this.loadList()
+              }).then(data=>{
+                let userInfo = res.userInfo
+                userInfo.openid = app.globalData.openid
+                console.log(res.userInfo, userInfo)
+                this.loadList(res.userInfo)
                 this.imageAnimate()
               })
             }
