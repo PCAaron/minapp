@@ -37,9 +37,9 @@ const getAccessToken = async () => {
         await getAccessToken()
     }
 }
-access_token
+
 setInterval(async ()=>{
     await updateAccessToken()
 }, (7200 - 300) * 1000)
 
-module.exports = getAccessToken() // 获取access_token
+module.exports = getAccessToken // 获取access_token
