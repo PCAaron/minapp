@@ -23,10 +23,6 @@ Page({
       this.setData({
         musiclist:playHistory
       })
-    } else {
-      wx.showModal({
-        conten: '播放历史为空'
-      })
     }
   },
 
