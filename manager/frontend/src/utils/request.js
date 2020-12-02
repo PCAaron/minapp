@@ -21,7 +21,7 @@ service.interceptors.request.use(
       // please modify it according to the actual situation
       config.headers['X-Token'] = getToken()
     }
-    return config
+    return Promise.resolve(config)
   },
   error => {
     // do something with request error
@@ -68,7 +68,7 @@ service.interceptors.response.use(
       }
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
-      return res
+      return Promise.resolve(res)
     }
   },
   error => {
