@@ -22,7 +22,7 @@
             <el-table-column
             label="操作">
                 <template slot-scope="scope">
-                    <el-button size="mini">编辑</el-button>
+                    <el-button size="mini" @click="onEdit(scope.row)">编辑</el-button>
                     <el-button size="mini" type="danger">删除</el-button>
                 </template>
             </el-table-column>
@@ -48,7 +48,6 @@ export default {
     },
     filters: {
         filterImg(val){
-            console.log('val', val)
             return val.replace('{size}', 400)
         }
     },
@@ -70,6 +69,11 @@ export default {
                 this.loading = false
             }
             
+        },
+        onEdit(row) {
+            this.$router.push({
+                path: `/playlist/edit/${row._id}`
+            })
         }
     },
 }

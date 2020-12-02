@@ -1,14 +1,20 @@
 const Koa = require('koa')
-const cors = require('koa2-cors')
+const cors = require('koa2-cors') // 解决跨域
 const app = new Koa()
 const Router = require('koa-router')
 const router = new Router()
 const { ENV } = require('./constant/index')
+const koaBody = require('koa-body') // 解析post-body参数
 
 // 跨域
 app.use(cors({
     origin: ['http://localhost:9528'],
     credentials: true
+}))
+
+// 接受post参数解析
+app.use(koaBody({
+    multipart: true
 }))
 
 // 全局中间件
