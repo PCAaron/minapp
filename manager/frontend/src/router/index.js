@@ -72,7 +72,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'swiper',
-        component: () => import('@/views/swiper/swiper'),
+        component: () => import('@/views/swiper/list'),
         meta: {
           title: '轮播图管理',
           icon: 'example'

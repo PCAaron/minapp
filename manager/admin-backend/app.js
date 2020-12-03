@@ -26,6 +26,9 @@ app.use(async (ctx, next)=> {
 const playlist = require('./controller/playlist')
 router.use('/playlist', playlist.routes())
 
+const swiper = require('./controller/swiper')
+router.use('/swiper', swiper.routes())
+
 app.use(router.routes()) // 重新声明
 app.use(router.allowedMethods()) // 允许方法使用
 
