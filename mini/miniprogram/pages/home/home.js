@@ -1,6 +1,6 @@
 // miniprogram/pages/home/home.js
 const MAX_LIMIT = 26
-
+const db = wx.cloud.database() // 初始化数据库
 Page({
 
   /**
@@ -25,7 +25,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getSwiper()
     this.getRankList()
+  },
+  // 获取轮播图
+  getSwiper() {
+    db.collection('swiper').get().then(res=>{
+      this.setData({
+        imgUrls: res.data
+      })
+    })
   },
 
   // 获取排行榜列表
@@ -82,6 +91,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.getSwiper()
     this.setData({
       playList: []
     })
