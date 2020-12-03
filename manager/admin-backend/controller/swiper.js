@@ -30,4 +30,31 @@ router.get('/list', async(ctx,next)=>{
     }
 })
 
+router.post('/upload', async(ctx,next)=> {
+    const fileid = await cloudStorage.upload(ctx) // 上传云存储
+    // 写入数据库
+    const query = `db.collection('swiper').add({data:{fileid:'${fileid}'}})`
+    const res = await callCloudDB(ctx, 'databaseadd', query)
+    ctx.body={
+        code: 20000,
+        data: res.id_list
+    }
+})
+
+router.get('/del', async(ctx,next)=>{
+    const {_id, fileid} = ctx.request.query
+    // 删除云数据库中的内容
+    const query = `db.collection('swiper').doc('${_id}').remove()`
+    const res = await callCloudDB(ctx, 'databasedelete', query)
+    // 删除云存储中的文件
+    const ret = cloudStorage.delete(ctx, [fileid])
+    ctx.body ={
+        code: 20000,
+        data: {
+            res,
+            ret
+        }
+    }
+})
+
 module.exports = router

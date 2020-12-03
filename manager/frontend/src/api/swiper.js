@@ -8,3 +8,11 @@ export const fetchList = async (params) => {
         method: 'get'
     })
 }
+
+export const del = async(params) => {
+    return await request({
+        params,
+        url: `${baseURL}/swiper/del`,
+        method: 'get'
+    })
+}
