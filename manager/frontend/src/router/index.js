@@ -59,9 +59,9 @@ export const constantRoutes = [
         component: () => import('@/views/playlist/edit'),
         meta: {
           title: '编辑歌单',
-          icon: 'table',
-          hidden: true
-        }
+          icon: 'table'
+        },
+        hidden: true
       },
     ]
   },

@@ -23,7 +23,7 @@
             label="操作">
                 <template slot-scope="scope">
                     <el-button size="mini" @click="onEdit(scope.row)">编辑</el-button>
-                    <el-button size="mini" type="danger">删除</el-button>
+                    <el-button size="mini" type="danger" @click="onDelete(scope.row)">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { fetchList } from '@/api/playlist'
+import { fetchList, del } from '@/api/playlist'
 import scroll from '@/utils/scroll'
 
 export default {
@@ -74,6 +74,36 @@ export default {
             this.$router.push({
                 path: `/playlist/edit/${row._id}`
             })
+        },
+        onDelete(row){
+            this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(async () => {
+                try {
+                    const {data} = await del({
+                        _id: row._id
+                    })
+                    if (data.deleted > 0) {
+                        this.$message({
+                            type: 'success',
+                            message: '删除成功!'
+                        });
+                        this.playlist = []
+                        await this.getList()
+                    } else {
+                        this.$message.warn('删除失败！')
+                    }
+                } catch (e) {
+                    console.warn(e)
+                }
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                });          
+            });
         }
     },
 }

@@ -12,7 +12,7 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="onSubmit">更新</el-button>
-                <el-button @click="onCancel">取消</el-button>
+                <el-button type="danger" @click="onCancel">取消</el-button>
             </el-form-item>
         </el-form>
     </div>
@@ -27,7 +27,7 @@ export default {
             detail: null
         }
     },
-    async mounted() {
+    async created() {
         await this.getDetail()
     },
     methods: {
@@ -47,7 +47,7 @@ export default {
             this.$router.push('/playlist/list')
         },
         onCancel() {
-            
+            this.$router.go(-1)
         }
     },
 }

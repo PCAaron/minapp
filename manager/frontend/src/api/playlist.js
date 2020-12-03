@@ -29,3 +29,12 @@ export const update = async (params) => {
         method: 'post'
     })
 }
+
+// 删除详情
+export const del = async (params) => {
+    return await request({
+        url: `${baseURL}/playlist/del`,
+        params,
+        method: 'get'
+    })
+}
