@@ -29,6 +29,9 @@ router.use('/playlist', playlist.routes())
 const swiper = require('./controller/swiper')
 router.use('/swiper', swiper.routes())
 
+const blog = require('./controller/blog')
+router.use('/blog', blog.routes())
+
 app.use(router.routes()) // 重新声明
 app.use(router.allowedMethods()) // 允许方法使用
 
