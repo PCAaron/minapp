@@ -5,6 +5,10 @@
         </swiper-item>
     </block>
 </swiper>
+<view class="notice" wx:if="{{sweet}}">
+    <text class="notice-left">说给小熊的每日蜜语：</text>
+    <view class="notice-right">{{sweet}}</view>
+</view>
 <view class="adContainer">
     <ad unit-id="adunit-e3efbf595a29bc5d"></ad>
 </view>

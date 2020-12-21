@@ -26,6 +26,17 @@ cloud.init({
 exports.main = async (event, context) => {
   const app = new TcbRouter({event})
 
+  // 每日蜜语
+  app.router('sweetword', async (ctx,next) => {
+    ctx.body = await cloud.database().collection('sweetlist')
+      .orderBy('createTime', 'desc')
+      .get(0)
+      .then(res=>{
+        console.log('sweetlist', res)
+        return res
+      })
+  })
+
   app.router('playlist', async (ctx,next) => {
     ctx.body = await cloud.database().collection('playlist')
       .skip(event.start).limit(event.count) // 分页信息

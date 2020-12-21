@@ -11,3 +11,20 @@
     margin-top: 10rpx;
     flex-direction: row;
 }
+
+.notice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40rpx 20rpx;
+    padding: 20rpx;
+    box-shadow: 0 4rpx 8rpx 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.notice-left{
+    width: 350rpx;
+    margin-bottom: 20rpx;
+}
+.notice-right{
+    flex: 1;
+    color: #FFA5C2;
+}
