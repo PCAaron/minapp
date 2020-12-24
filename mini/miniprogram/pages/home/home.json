@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "m-playlist": "/components/playlist/playlist",
+    "m-hotlist": "/components/hotlist/hotlist",
     "m-heart": "/components/heart/heart"
   }
 }

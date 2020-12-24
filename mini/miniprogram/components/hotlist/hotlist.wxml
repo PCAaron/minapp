@@ -1,0 +1,5 @@
+<!--components/playlist/playlist.wxml-->
+<view class="playlist-container" bind:tap="musicList">
+    <image class="playlist-img" src="{{cover.img}}" mode="scaleToFill"/>
+    <view class="playlist-name">{{cover.key}}</view>
+</view>

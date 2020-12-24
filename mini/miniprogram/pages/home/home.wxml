@@ -4,18 +4,28 @@
             <image class="swiper-image" src="{{item.fileid}}" mode="widthFit"/>
         </swiper-item>
     </block>
+    <swiper-item class="adContainer">
+        <ad unit-id="adunit-e3efbf595a29bc5d"></ad>
+    </swiper-item>
 </swiper>
 <view class="notice" wx:if="{{sweet}}">
     <text class="notice-left">说给小熊的每日蜜语：</text>
     <view class="notice-right">{{sweet}}</view>
 </view>
-<view class="adContainer">
-    <ad unit-id="adunit-e3efbf595a29bc5d"></ad>
+<view class="classify">
+    <view class="classify-title">小熊最爱の明星</view>
+    <view class="playlist-wrap">
+        <block wx:for="{{starList}}" wx:key="_id">
+            <m-hotlist cover="{{item}}"></m-hotlist>
+        </block>
+    </view>
 </view>
-<view class="playlist-wrap">
-    <block wx:for="{{playList}}" wx:key="_id">
-        <m-playlist cover="{{item}}"></m-playlist>
-    </block>
+<view class="classify">
+    <view class="classify-title">小熊音乐分类の清单</view>
+    <view class="playlist-wrap">
+        <block wx:for="{{hotList}}" wx:key="_id">
+            <m-hotlist cover="{{item}}"></m-hotlist>
+        </block>
+    </view>
 </view>
-
 <m-heart/>

@@ -9,7 +9,9 @@ Page({
   data: {
     imgUrls: [],
     playList: [],
-    sweet: ''
+    sweet: '',
+    starList: [],
+    hotList: []
   },
 
   /**
@@ -17,8 +19,9 @@ Page({
    */
   onLoad: function (options) {
     this.getSwiper()
-    this.getRankList()
     this.getSweet()
+    // this.getRankList()
+    this.getClassify()
   },
   // 获取轮播图
   getSwiper() {
@@ -26,6 +29,37 @@ Page({
       this.setData({
         imgUrls: res.data
       })
+    })
+  },
+
+  getClassify() {
+    wx.showLoading({
+      title: '加载中...'
+    })
+    wx.cloud.callFunction({
+      name: 'music',
+      data: {
+        start: this.data.playList.length,
+        count: MAX_LIMIT,
+        $url: 'classify'
+      }
+    }).then(res => {
+      console.log(res)
+      let starList = []
+      let hotList = []
+      res.result.data.forEach(item => {
+        if (item.classify === 'stars') {
+          starList.push(item)
+        }  else {
+          hotList.push(item)
+        }
+      })
+      this.setData({
+        starList,
+        hotList
+      })
+      wx.stopPullDownRefresh() // 停止下拉刷新动作
+      wx.hideLoading()
     })
   },
 

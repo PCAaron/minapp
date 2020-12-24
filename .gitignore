@@ -1,4 +1,5 @@
 manager/admin-backend/constant/
+mini/cloudfunctions/**/constant/
 node_modules/
 tests/**/coverage/
 package-lock.json*

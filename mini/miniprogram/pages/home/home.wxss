@@ -4,6 +4,11 @@
     height: 100%;
 }
 
+.classify-title{
+    margin: 40rpx 20rpx 20rpx;
+    font-weight: bold;
+}
+
 .playlist-wrap{
     display: flex;
     flex-wrap: wrap;
@@ -27,4 +32,12 @@
 .notice-right{
     flex: 1;
     color: #FFA5C2;
+}
+.adContainer{
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #F5F5F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

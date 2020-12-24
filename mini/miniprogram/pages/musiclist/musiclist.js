@@ -25,24 +25,34 @@ Page({
     wx.cloud.callFunction({
       name: 'music',
       data: {
-        rankid:options.rankid,
-        page:this.data.page,
-        $url: 'musiclist'
+        id: options.id,
+        $url: 'musicMenus'
       }
-    }).then(res => {
-      this.setData({
-        info: {
-          bannerurl: (res.result.info.bannerurl).replace('{size}', '400'),
-          rankname: res.result.info.rankname,
-          rankid: res.result.info.rankid,
-          id: res.result.info.id,
-          issue: res.result.info.issue
-        },
-        musiclist: res.result.songs.list,
-        total: res.result.songs.total
-      })
-      this.setMusiclist()
+    }).then(res=>{
+      console.log(res)
     })
+
+    // wx.cloud.callFunction({
+    //   name: 'music',
+    //   data: {
+    //     rankid:options.rankid,
+    //     page:this.data.page,
+    //     $url: 'musiclist'
+    //   }
+    // }).then(res => {
+    //   this.setData({
+    //     info: {
+    //       bannerurl: (res.result.info.bannerurl).replace('{size}', '400'),
+    //       rankname: res.result.info.rankname,
+    //       rankid: res.result.info.rankid,
+    //       id: res.result.info.id,
+    //       issue: res.result.info.issue
+    //     },
+    //     musiclist: res.result.songs.list,
+    //     total: res.result.songs.total
+    //   })
+    //   this.setMusiclist()
+    // })
   },
 
   setMusiclist() {

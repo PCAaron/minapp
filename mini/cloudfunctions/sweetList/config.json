@@ -3,7 +3,7 @@
         {
             "name": "sweetTrigger",
             "type": "time",
-            "config": "0 0 6 * * * *"
+            "config": "0 0 9,12,18,23 * * * *"
         }
     ]
 }
