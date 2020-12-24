@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "m-musiccard": "/components/musiccard/musiccard"
+  }
+}

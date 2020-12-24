@@ -12,7 +12,8 @@
     "pages/blessing/blessing",
     "pages/life/life",
     "pages/about/about",
-    "pages/userlist/userlist"
+    "pages/userlist/userlist",
+    "pages/musicMenus/musicMenus"
   ],
   "permission": {
     "scope.userLocation": {

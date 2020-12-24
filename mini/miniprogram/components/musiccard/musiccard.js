@@ -24,7 +24,7 @@ Component({
   methods: {
     musicList() {
       wx.navigateTo({
-        url: `../../pages/musicMenus/musicMenus?id=${this.properties.cover.key}`
+        url: `../../pages/player/player?id=${this.properties.cover.key}`
       })
     }
   }

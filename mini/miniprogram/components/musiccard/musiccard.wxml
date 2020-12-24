@@ -1,0 +1,6 @@
+<!--components/playlist/playlist.wxml-->
+<view class="playlist-container" bind:tap="musicList">
+    <image class="playlist-img" src="{{cover.pic}}" mode="scaleToFill"/>
+    <view class="playlist-name">歌名：{{cover.title}}</view>
+    <view class="playlist-name">歌手：{{cover.author}}</view>
+</view>

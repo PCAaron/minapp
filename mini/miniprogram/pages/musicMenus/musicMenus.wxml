@@ -1,0 +1,8 @@
+<!--miniprogram/pages/musiclist/musiclist.wxml-->
+<view class="detail-container">
+    <view class="playlist-wrap">
+        <block wx:for="{{musiclist}}" wx:key="_id">
+            <m-musiccard cover="{{item}}"></m-musiccard>
+        </block>
+    </view>
+</view>
