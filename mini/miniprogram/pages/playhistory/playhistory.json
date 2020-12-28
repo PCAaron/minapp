@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "m-music": "/components/musicitem/musicitem"
+    "m-music": "/components/musicitem/musicitem",
+    "m-musiccard": "/components/musiccard/musiccard"
   },
   "navigationBarTitleText": "最近播放"
 }

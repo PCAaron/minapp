@@ -98,6 +98,12 @@ Page({
     })
   },
 
+  toMenus(e) {
+    wx.navigateTo({
+      url: `../../pages/musicMenus/musicMenus?id=${e.target.dataset.key}`
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

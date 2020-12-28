@@ -4,7 +4,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    cover: Object
+    cover: Object,
+    idx: Number
   },
 
   // 监听器
@@ -24,7 +25,7 @@ Component({
   methods: {
     musicList() {
       wx.navigateTo({
-        url: `../../pages/player/player?id=${this.properties.cover.key}`
+        url: `../../pages/media/media?idx=${this.properties.idx}`
       })
     }
   }

@@ -18,6 +18,9 @@ Page({
     this.loadBlogList()
   },
   loadBlogList(start = 0) {
+    wx.showLoading({
+      title: '加载中...'
+    })
     wx.cloud.callFunction({
       name: 'blog',
       data: {
@@ -30,6 +33,7 @@ Page({
       this.setData({
         blogList: this.data.blogList.concat(res.result)
       })
+      wx.hideLoading()
       wx.stopPullDownRefresh()
     })
   },

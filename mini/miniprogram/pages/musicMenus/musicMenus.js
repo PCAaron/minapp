@@ -24,9 +24,9 @@ Page({
         this.setData({
           musiclist: res.result.Body
         })
+        this.setMusiclist()
       }
     })
-    this.setMusiclist()
   },
 
   setMusiclist() {

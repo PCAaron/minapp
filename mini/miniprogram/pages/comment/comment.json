@@ -3,5 +3,5 @@
     "m-card": "/components/blogcard/blogcard",
     "m-ctrl": "/components/blogcoment/blogcoment"
   },
-  "navigationBarTitleText": "博客详情"
+  "navigationBarTitleText": "动态详情"
 }

@@ -1,5 +1,11 @@
 <!--miniprogram/pages/playhistory/playhistory.wxml-->
-<m-music musiclist="{{musiclist}}"></m-music>
+<view class="detail-container">
+    <view class="playlist-wrap">
+        <block wx:for="{{musiclist}}" wx:for-index="idx" wx:key="_id">
+            <m-musiccard cover="{{item}}" idx="{{idx}}"></m-musiccard>
+        </block>
+    </view>
+</view>
 <block wx:if="{{musiclist.length === 0}}">
     <view class="music-empty">暂无播放歌曲</view>
 </block>

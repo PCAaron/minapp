@@ -13,7 +13,8 @@
     "pages/life/life",
     "pages/about/about",
     "pages/userlist/userlist",
-    "pages/musicMenus/musicMenus"
+    "pages/musicMenus/musicMenus",
+    "pages/media/media"
   ],
   "permission": {
     "scope.userLocation": {

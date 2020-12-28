@@ -60,21 +60,21 @@ exports.main = async (event, context) => {
   //     })
   // })
 
-  app.router('player', async (ctx,next) => {
-    console.log('hash', event.musicid)
-    ctx.body = await rp({
-      uri: `${PLAY_URL}/yy/index.php?r=play/getdata&hash=${event.musicid}`, // 接口已没有返回歌词及音频
-      // uri: `${mKUGOU_URL}/app/i/getSongInfo.php?cmd=playInfo&hash=${event.musicid}`, // 接口有请求限制
-      headers: {
-        Cookie: 'kg_mid=kugoukey', // 请求歌词需要写入kg_mid cookie值
-        maxAge: 31536000
-      }
-    })
-      .then(res => {
-        console.log('res----', res)
-        return JSON.parse(res)
-      })
-  })
+  // app.router('player', async (ctx,next) => {
+  //   console.log('hash', event.musicid)
+  //   ctx.body = await rp({
+  //     uri: `${PLAY_URL}/yy/index.php?r=play/getdata&hash=${event.musicid}`, // 接口已没有返回歌词及音频
+  //     // uri: `${mKUGOU_URL}/app/i/getSongInfo.php?cmd=playInfo&hash=${event.musicid}`, // 接口有请求限制
+  //     headers: {
+  //       Cookie: 'kg_mid=kugoukey', // 请求歌词需要写入kg_mid cookie值
+  //       maxAge: 31536000
+  //     }
+  //   })
+  //     .then(res => {
+  //       console.log('res----', res)
+  //       return JSON.parse(res)
+  //     })
+  // })
 
   // app.router('search', async(ctx,next) => { // 歌曲搜索 demo:http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA&page=1&pagesize=20&showtype=1
   //   const muiscName = event.musicName
@@ -97,10 +97,32 @@ exports.main = async (event, context) => {
 
   // 分类跳转进列表
   app.router('musicMenus', async(ctx, next) => {
-    ctx.body = await rp(`${TONG_URL}/api/netease/?key=${TONGKEY}&id=${event.id}&type=so`)
+    // let detail = await cloud.database().collection('classifylist').where({
+    //   _id: event.id
+    // }).get().then(res => {
+    //   return res.data
+    // })
+    let options = {
+      uri: `${TONG_URL}/api/netease/`,
+      qs: {
+        key: TONGKEY,
+        type: 'so',
+        id: event.id
+      },
+      json: true
+    }
+    ctx.body = await rp(options)
       .then(res=>{
         console.log('musicMenus-res', res)
-        return JSON.parse(res)
+        return res
+      })
+  })
+
+  // 歌曲播放
+  app.router('lyric', async(ctx, next) => {
+    ctx.body = await rp(`${event.lrc}`)
+      .then(res => {
+        return res
       })
   })
 

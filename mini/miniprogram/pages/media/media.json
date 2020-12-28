@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "m-progress": "/components/progressbar/progressbar",
+    "m-lyric": "/components/lyric/lyric"
+  },
+  "disableScroll": true
+}
