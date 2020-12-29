@@ -1,0 +1,12 @@
+/* miniprogram/pages/video/video.wxss */
+.video-hot{
+    margin-bottom: 20rpx;
+}
+
+.video-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20rpx;
+    flex-direction: row;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "m-videocard": "/components/videocard/videocard"
+  },
+  "navigationBarTitleText": "热门MV"
+}

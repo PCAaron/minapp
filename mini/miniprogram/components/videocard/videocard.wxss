@@ -1,0 +1,36 @@
+/* components/videocard/videocard.wxss */
+.video-container{
+    width: 340rpx;
+    box-shadow: 0 6rpx 10rpx 0 rgba(0, 0, 0, .19);
+    border-radius: 8rpx;
+    margin-bottom: 40rpx;
+    position: relative;
+}
+
+.video-wrap{
+    position: relative;
+}
+
+.video-count{
+    position: absolute;
+    top: 12rpx;
+    left: -12rpx;
+    color: #FFA5C2;
+}
+
+.video-pic{
+    width: 100%;
+    height: 200rpx;
+}
+
+.video-desc{
+    height: 100rpx;
+    line-height: 50rpx;
+    padding: 10rpx 20rpx;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 24rpx;
+}

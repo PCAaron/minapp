@@ -14,7 +14,9 @@
     "pages/about/about",
     "pages/userlist/userlist",
     "pages/musicMenus/musicMenus",
-    "pages/media/media"
+    "pages/media/media",
+    "pages/video/video",
+    "pages/videodetail/videodetail"
   ],
   "permission": {
     "scope.userLocation": {
@@ -40,6 +42,12 @@
         "text": "音乐",
         "iconPath": "images/music.png",
         "selectedIconPath": "images/music-selected.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "MV",
+        "iconPath": "images/video.png",
+        "selectedIconPath": "images/video-selected.png"
       },
       {
         "pagePath": "pages/find/find",

@@ -1,0 +1,14 @@
+<!--miniprogram/pages/video/video.wxml-->
+<view class="video-container">
+    <view class="video-hot">
+        <ad unit-id="adunit-a37b0827c9b2dafc" ad-type="video" ad-theme="white"></ad>
+    </view>
+    <view class="video-list" wx:if="{{detail && detail.mv && detail.mv.list}}">
+        <view class="video-wrap">
+            <block wx:for="{{detail.mv.list}}" wx:key="{{item.v_id}}">
+                <m-videocard video="{{item}}" iconfont="iconfont"
+                     icon-shipin="icon-shipin"></m-videocard>
+            </block>
+        </view>
+    </view>
+</view>
