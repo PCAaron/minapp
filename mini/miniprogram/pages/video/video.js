@@ -22,7 +22,8 @@ Page({
     wx.cloud.callFunction({
       name: 'video',
       data: {
-        $url: 'hotmv'
+        $url: 'hotmv',
+        word: '最热MV'
       }
     }).then(res => {
       console.log(res)

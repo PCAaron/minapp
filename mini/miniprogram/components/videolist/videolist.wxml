@@ -1,0 +1,14 @@
+<!--components/videocard/videocard.wxml-->
+<view class="video-container" bind:tap="toVideo" data-id="{{video.v_id}}" data-word="{{video.mv_name}}" data-count="{{video.play_count}}" data-publish="{{video.publish_date}}">
+    <view class="video-wrap">
+        <view class="video-img">
+            <image class="video-pic" src="{{video.mv_pic_url}}" mode="aspectFit"/>
+        </view>
+        <view class="video-count">
+            <i class="iconfont icon-shipin icon"></i>
+        </view>
+    </view>
+    <view class="video-desc">
+        {{video.mv_name}}
+    </view>
+</view>

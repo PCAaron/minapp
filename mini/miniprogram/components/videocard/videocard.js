@@ -31,7 +31,7 @@ Component({
   methods: {
     toVideo(e) {
       wx.navigateTo({
-        url: `../../pages/videodetail/videodetail?id=${this.properties.video.v_id}&count=${this.properties.video.play_count}&publish=${this.properties.video.publish_date}`
+        url: `../../pages/videodetail/videodetail?id=${this.properties.video.v_id}&count=${this.properties.video.play_count}&publish=${this.properties.video.publish_date}&word=${this.properties.video.singer_name}`
       })
     },
     _formatNumber(num, point){

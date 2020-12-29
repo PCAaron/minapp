@@ -1,0 +1,40 @@
+/* components/videolist/videolist.wxss */
+.video-container{
+    width: 100%;
+    box-shadow: 0 4rpx 6rpx 0 rgba(0, 0, 0, .19);
+    border-radius: 8rpx;
+    margin-bottom: 40rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-wrap{
+    width: 260rpx;
+    position: relative;
+}
+
+image{
+    width: 100%;
+    height: 140rpx;
+}
+
+.video-count{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-desc{
+    font-size: 28rpx;
+    color:#363636;
+    padding: 0 30rpx 0 20rpx;
+    flex: 1;
+}
+
+.icon{
+    color:#FFA5C2;
+    font-size: 52rpx;
+}

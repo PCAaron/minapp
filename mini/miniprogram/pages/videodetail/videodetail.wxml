@@ -1,2 +1,34 @@
 <!--miniprogram/pages/videodetail/videodetail.wxml-->
-<text>miniprogram/pages/videodetail/videodetail.wxml</text>
+<view class="detail-container">
+    <view class="video">
+        <view class="video-player">
+            <video 
+                id="myVideo" 
+                src="{{detail.mvurl['720p'] || detail.mvurl['480p'] || detail.mvurl['360p']}}"
+                binderror="videoError"
+                show-center-play-btn='{{false}}' 
+                show-play-btn="{{true}}" 
+                controls
+                autoplay="{{true}}"
+                picture-in-picture-mode="{{['push', 'pop']}}"
+                ></video>
+        </view>
+        <view class="video-desc">
+            <view class="video-name">{{detail.mvinfo.name}}</view>
+            <view class="video-count">播放次数：{{count}}</view>
+            <view class="video-count">发布时间：{{publish}}</view>
+        </view>
+    </view>
+    <view class="video-list">
+        <view class="video-title">相关视频</view>
+        <view class="video-wrap" wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:key="{{item.v_id}}">
+                <m-list bind:loadNewMV="loadNewMV" video="{{item}}" iconfont="iconfont"
+                     icon-shipin="icon-shipin"></m-list>
+            </block>
+        </view>
+        <view class="video-empty" wx:else>
+            暂无相关视频~
+        </view>
+    </view>
+</view>

@@ -16,9 +16,27 @@ cloud.init({
 exports.main = async (event, context) => {
   const app = new TcbRouter({event})
 
-  // 热门mv列表
+  // mv列表
   app.router('hotmv', async(ctx, next) => {
-    ctx.body = await rp(`${TONG_URL}/api/mv/?key=${TONGKEY}&mv=qq&type=so&word=最热MV`)
+    let options = {
+      uri: `${TONG_URL}/api/mv/`,
+      qs: {
+        key: TONGKEY,
+        mv: 'qq',
+        type: 'so',
+        word: event.word
+      },
+      json: true
+    }
+    ctx.body = await rp(options)
+      .then(res=>{
+        return res
+      })
+  })
+
+  // mv详情
+  app.router('mvdetail', async(ctx, next) => {
+    ctx.body = await rp(`${TONG_URL}/api/mv/?key=${TONGKEY}&mv=qq&type=info&id=${event.id}`)
       .then(res=>{
         return JSON.parse(res)
       })
