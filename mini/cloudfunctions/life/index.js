@@ -21,7 +21,7 @@ exports.main = async (event, context) => {
   
   app.router('list', async (ctx, next) => {
     let lifeList = await lifeCollection.skip(event.start).limit(event.count)
-      .orderBy('times', 'asc').get().then(res=>{
+      .orderBy('times', 'desc').get().then(res=>{
         return res.data
       })
     ctx.body = lifeList

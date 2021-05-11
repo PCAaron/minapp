@@ -1,0 +1,5 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="index">
+    <image src="../../images/love_bg1.jpg" class="bg"/>
+    <m-barrage/>
+</view>

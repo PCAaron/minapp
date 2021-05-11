@@ -1,0 +1,18 @@
+<!--components/blogcard/blogcard.wxml-->
+<view class="blog">
+    <view class="blog-title">
+        <view class="blog-box">
+            <view class="blog-time">{{blog.times}}</view>
+        </view>
+    </view>
+    <view class="blog-content">{{blog.content}}</view>
+    <view class="blog-img">
+        <block wx:for="{{blog.img}}" wx:key="{{index}}">
+            <image wx:if="{{item}}" data-imgsrc="{{item}}" data-imgs="{{blog.img}}" catch:tap="onPreviewImg" class="img" src="{{item}}" mode="aspectFill"/>
+        </block>
+    </view>
+    <view class="blog-location" wx:if="{{blog.location && blog.location.name}}">
+         <i class="iconfont icon-location"></i>
+        {{blog.location.name}}
+    </view>
+</view>

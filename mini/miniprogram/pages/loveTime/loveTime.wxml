@@ -1,0 +1,19 @@
+<view class='weui-cell-third'>
+    <view class="profile-header">
+        <view class="avatar-url">
+            <open-data type="userAvatarUrl" />
+        </view>
+        <open-data type="userNickName" class="nickname"/>
+    </view>
+    <block wx:for="{{list}}" wx:key="*this">
+        <view class='weui-cell-list'>
+            <view class='weui-cell-circle'></view>
+            <view class='weui-cell-line'>
+                <m-card blog="{{item}}"
+                     iconfont="iconfont"
+                     icon-location="icon-location"
+                ></m-card>
+            </view>
+        </view>
+    </block>
+</view>
