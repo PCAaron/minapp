@@ -10,3 +10,59 @@
     height: 100vh;
     object-fit: cover;
 }
+
+.fixRight{
+    position: fixed;
+    right: 60rpx;
+    bottom: 100rpx;
+}
+
+.send-blessing{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40rpx;
+}
+.canvas {
+    background: transparent;
+    width: 90px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+  }
+  /* transform下面的属性是为了让动画看上去更自然 */
+  .heart {
+    /* position: fixed;
+    right: 45px;
+    bottom: 30px; */
+    position: relative;
+
+    width: 60px;
+    height: 60px;
+    transform: scale(1);
+    transition: ease all;
+    transition-duration: 700ms;
+    animation: move 1.5s infinite;
+  }
+.send-msg{
+  margin-top: 40rpx;
+    text-align: center;
+    animation: move 1.5s infinite;
+}
+  .icon-fabu{
+    font-size: 80rpx;
+}
+
+@keyframes move{
+  0%{
+      transform: scale(1);
+  }
+  50%{
+      transform: scale(1.2);
+  }
+  100%{
+      transform: scale(1);
+  }
+}

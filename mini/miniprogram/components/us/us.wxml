@@ -1,0 +1,8 @@
+<!--components/us/us.wxml-->
+<view class="container">
+    <view class="blessing">
+        <view class="user"></view>
+        <view class="desc">在一起{{together}}了</view>
+        <view  class="use"></view>
+    </view>
+</view>>

@@ -1,5 +1,20 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="index">
-    <image src="../../images/love_bg1.jpg" class="bg"/>
+    <image src="../../images/love_bg1.jpg" class="bg" mode="aspectFill"/>
+    <m-us/>
+    <view class="fixRight">
+      <view class="send-blessing">
+        <canvas canvas-id="mycanvas" class="canvas" />
+        <image src="../../images/red-heart.png" class="heart" bindtap="onClickImage" style="{{style_img}}"></image>
+      </view>
+      <view class="send-msg">
+        <i class="iconfont icon-fabu"></i>
+      </view>
+    </view>
+    
+    <!-- <view class="fixRight">
+        <view >送上祝福</view>
+        <view >点赞祝福</view>
+    </view> -->
     <m-barrage/>
 </view>

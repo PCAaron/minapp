@@ -1,9 +1,6 @@
 <view class='weui-cell-third'>
     <view class="profile-header">
-        <view class="avatar-url">
-            <open-data type="userAvatarUrl" />
-        </view>
-        <open-data type="userNickName" class="nickname"/>
+        <image src="../../images/love.jpg" mode="aspectFit"/>
     </view>
     <block wx:for="{{list}}" wx:key="*this">
         <view class='weui-cell-list'>
